@@ -4,11 +4,14 @@ Copyright (C) 2010 Gregoire Lejeune
 
 A GraphViz[http://www.graphviz.org/] viewer/editor using MacRuby[http://www.macruby.org/]
 
+- Tell me more...
+- Ok. Here is a demo : http://youtu.be/nyfZVGlErTo
+
 == INSTALLATION
 
 First, install :
 
-* "Apple Developer Tools"[http://developer.apple.com/technologies/tools/]
+* {Apple Developer Tools}[http://developer.apple.com/technologies/tools/]
 * MacRuby[http://www.macruby.org/]
 * GraphViz[http://www.graphviz.org/]
 * BWToolkit[http://brandonwalkin.com/bwtoolkit/]
