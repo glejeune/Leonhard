@@ -1,0 +1,26 @@
+= Leonhard
+
+Copyright (C) 2010 Gregoire Lejeune
+
+A GraphViz[http://www.graphviz.org/] viewer/editor using MacRuby[http://www.macruby.org/]
+
+== INSTALLATION
+
+First, install :
+
+* "Apple Developer Tools"[http://developer.apple.com/technologies/tools/]
+* MacRuby[http://www.macruby.org/]
+* GraphViz[http://www.graphviz.org/]
+* BWToolkit[http://brandonwalkin.com/bwtoolkit/]
+
+Then, fork this repo, open <tt>Leonhard.xcodeproj</tt> with Xcode and 
+clic on "Build and Run"
+
+Now you know that it works... badly, so make your corrections, commit them and send me[http://github.com/glejeune] a pull request. Thanks !
+
+== CHANGELOG
+
+=== 0.0.1
+
+* Proof of concept
+
