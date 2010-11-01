@@ -12,8 +12,10 @@ class AppController
   attr_accessor :preferences
   attr_accessor :pdfView
   attr_accessor :codeView
+  attr_accessor :frageriaView
   attr_accessor :errorsView
   attr_accessor :interpretorMenu
+  attr_accessor :frageria
 
   def initialize
     @fileName = nil
@@ -21,21 +23,33 @@ class AppController
   end
 
   def awakeFromNib
-    @graphVizGenerator = GraphVizGenerator.new( @codeView, @errorsView, @pdfView, @preferences )
-    self.codeView.textStorage.delegate = CodeViewDelegator.new( @graphVizGenerator, @preferences )
+  end
+  
+  def applicationDidFinishLaunching(aNotification)
+    @frageria = MGSFragaria.alloc.init
     
+    @frageria.setObject(NSNumber.numberWithBool(true), forKey:"isSyntaxColoured")
+    @frageria.setObject(NSNumber.numberWithBool(false), forKey:"showLineNumberGutter")
+#    @frageria.setObject(self, forKey:"MGSFODelegate")
+	
+    # define our syntax definition
+    @frageria.setObject("GraphViz", forKey:"syntaxDefinition")
+    
+    # embed editor in editView
+    @frageria.embedInView(@frageriaView)
+    
+    @codeView = @frageria.objectForKey("firstTextView")
+    
+    # Set GraphVizGenerator
+    @graphVizGenerator = GraphVizGenerator.new( @codeView, @errorsView, @pdfView, @preferences )
+    @codeView.textStorage.delegate = CodeViewDelegator.new( @graphVizGenerator, @preferences )
+
     # Set default interpretor
     @graphVizGenerator.interpretor = "dot"
     @interpretorMenu.itemArray.each do |menuItem|
       menuItem.state = NSOffState unless menuItem.title == @graphVizGenerator.interpretor
     end
-    
-    # Set default font
-    self.codeView.font = NSFont.fontWithName( "Courier", size:13 )
-  end
-  
-  def applicationDidFinishLaunching(aNotification)
-    # Insert code here to initialize your application 
+
   end
 
   def application(sender, openFile:path)

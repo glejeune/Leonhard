@@ -25,13 +25,13 @@ class Preferences
     # Set preferences values
     @graphVizPath.stringValue = @userDefaultsPrefs.valueForKey("GraphVizPath").clone
     @autoGenerate.state = @userDefaultsPrefs.valueForKey("Autogenerate")
-    @syntaxHighlighting.state = @userDefaultsPrefs.valueForKey("SyntaxHighlighting")
+    @syntaxHighlighting.state = @userDefaultsPrefs.valueForKey("isSyntaxColoured")
   end
   
   def closePreferencesWindow(sender)
     @userDefaultsPrefs.setObject(@graphVizPath.stringValue(), forKey: "GraphVizPath")
     @userDefaultsPrefs.setObject((@autoGenerate.state == 1), forKey: "Autogenerate")
-    @userDefaultsPrefs.setObject((@syntaxHighlighting.state == 1), forKey: "SyntaxHighlighting")
+    @userDefaultsPrefs.setObject(@syntaxHighlighting.state, forKey: "isSyntaxColoured")
     @userDefaultsPrefs.synchronize
         
 		NSApp.endSheet(@preferencesWindow)
@@ -47,7 +47,7 @@ class Preferences
   end
   
   def syntaxHighlighting?
-    @userDefaultsPrefs.valueForKey("SyntaxHighlighting")
+    @userDefaultsPrefs.valueForKey("SyntaxHighlighting") == 1
   end
   
   def gvPath

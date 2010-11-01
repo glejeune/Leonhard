@@ -23,6 +23,10 @@ Now you know that it works... badly, so make your corrections, commit them and s
 
 == CHANGELOG
 
+=== 0.0.2
+* Use Fragaria[http://github.com/glejeune/Fragaria] with GraphViz syntax support.
+* Use Sparkle[http://sparkle.andymatuschak.org]
+
 === 0.0.1
 
 * Proof of concept

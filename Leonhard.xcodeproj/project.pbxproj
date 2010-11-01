@@ -49,13 +49,17 @@
 		373C1F3912030DE7007A93D3 /* GVPDFView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 373C1F3812030DE7007A93D3 /* GVPDFView.rb */; };
 		373C1F7712031576007A93D3 /* LeonhardHelp in Resources */ = {isa = PBXBuildFile; fileRef = 373C1F7412031576007A93D3 /* LeonhardHelp */; };
 		373D3AD41200657F0091A32A /* GraphVizGenerator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 373D3AD31200657F0091A32A /* GraphVizGenerator.rb */; };
+		3786279A127EE5C90010307B /* MGSFragaria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37862799127EE5C90010307B /* MGSFragaria.framework */; };
+		3786279F127EE6100010307B /* MGSFragaria.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37862799127EE5C90010307B /* MGSFragaria.framework */; };
+		3787FAF5127EE7990054304C /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3787FAF4127EE7990054304C /* BWToolkitFramework.framework */; };
+		3787FAF8127EE79E0054304C /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3787FAF4127EE7990054304C /* BWToolkitFramework.framework */; };
+		3787FB2E127EE86D0054304C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3787FB2D127EE86D0054304C /* Sparkle.framework */; };
+		3787FB31127EE8700054304C /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3787FB2D127EE86D0054304C /* Sparkle.framework */; };
 		378AF81A120031EC002499BB /* AppController.rb in Resources */ = {isa = PBXBuildFile; fileRef = 378AF819120031EC002499BB /* AppController.rb */; };
 		378AF871120033A5002499BB /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378AF870120033A5002499BB /* Quartz.framework */; };
 		378AF8A512003703002499BB /* graph.icns in Resources */ = {isa = PBXBuildFile; fileRef = 378AF8A412003703002499BB /* graph.icns */; };
 		378AF8B2120038ED002499BB /* CodeViewDelegator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 378AF8B1120038ED002499BB /* CodeViewDelegator.rb */; };
 		378AF8ED12004084002499BB /* GVUtils.rb in Resources */ = {isa = PBXBuildFile; fileRef = 378AF8EC12004084002499BB /* GVUtils.rb */; };
-		378FB6981206CFB20081E44C /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378FB6971206CFB20081E44C /* BWToolkitFramework.framework */; };
-		378FB6A11206CFBE0081E44C /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 378FB6971206CFB20081E44C /* BWToolkitFramework.framework */; };
 		4DE339F70D74FCDD00ADB6EE /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4DE339F60D74FCDD00ADB6EE /* rb_main.rb */; };
 		4DE3BE140D8651D900ECA448 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE3BE130D8651D900ECA448 /* MacRuby.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -70,7 +74,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				378FB6A11206CFBE0081E44C /* BWToolkitFramework.framework in CopyFiles */,
+				3787FB31127EE8700054304C /* Sparkle.framework in CopyFiles */,
+				3787FAF8127EE79E0054304C /* BWToolkitFramework.framework in CopyFiles */,
+				3786279F127EE6100010307B /* MGSFragaria.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,12 +97,14 @@
 		373C1F3812030DE7007A93D3 /* GVPDFView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = GVPDFView.rb; sourceTree = "<group>"; };
 		373C1F7412031576007A93D3 /* LeonhardHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LeonhardHelp; sourceTree = "<group>"; };
 		373D3AD31200657F0091A32A /* GraphVizGenerator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = GraphVizGenerator.rb; sourceTree = "<group>"; };
+		37862799127EE5C90010307B /* MGSFragaria.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MGSFragaria.framework; sourceTree = "<group>"; };
+		3787FAF4127EE7990054304C /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BWToolkitFramework.framework; sourceTree = "<group>"; };
+		3787FB2D127EE86D0054304C /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		378AF819120031EC002499BB /* AppController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AppController.rb; sourceTree = "<group>"; };
 		378AF870120033A5002499BB /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		378AF8A412003703002499BB /* graph.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = graph.icns; sourceTree = "<group>"; };
 		378AF8B1120038ED002499BB /* CodeViewDelegator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = CodeViewDelegator.rb; sourceTree = "<group>"; };
 		378AF8EC12004084002499BB /* GVUtils.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = GVUtils.rb; sourceTree = "<group>"; };
-		378FB6971206CFB20081E44C /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = /Users/greg/Library/Developer/BWToolkit/BWToolkitFramework.framework; sourceTree = "<absolute>"; };
 		37A6C1561206CBA500C0EC90 /* README.rdoc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.rdoc; sourceTree = "<group>"; };
 		4DE339F60D74FCDD00ADB6EE /* rb_main.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		4DE3BE130D8651D900ECA448 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
@@ -112,7 +120,9 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				4DE3BE140D8651D900ECA448 /* MacRuby.framework in Frameworks */,
 				378AF871120033A5002499BB /* Quartz.framework in Frameworks */,
-				378FB6981206CFB20081E44C /* BWToolkitFramework.framework in Frameworks */,
+				3786279A127EE5C90010307B /* MGSFragaria.framework in Frameworks */,
+				3787FAF5127EE7990054304C /* BWToolkitFramework.framework in Frameworks */,
+				3787FB2E127EE86D0054304C /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +148,9 @@
 				4DE3BE130D8651D900ECA448 /* MacRuby.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				378AF870120033A5002499BB /* Quartz.framework */,
-				378FB6971206CFB20081E44C /* BWToolkitFramework.framework */,
+				37862799127EE5C90010307B /* MGSFragaria.framework */,
+				3787FAF4127EE7990054304C /* BWToolkitFramework.framework */,
+				3787FB2D127EE86D0054304C /* Sparkle.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -244,7 +256,14 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Leonhard" */;
 			compatibilityVersion = "Xcode 3.0";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Leonhard */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -425,6 +444,7 @@
 					"\"$(SRCROOT)/../../Library/Developer/BWToolkit\"",
 					"\"$(SRCROOT)/../../../Library/Developer/BWToolkit\"",
 					"\"$(SRCROOT)/../../../../../Library/Developer/BWToolkit\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -449,6 +469,7 @@
 					"\"$(SRCROOT)/../../Library/Developer/BWToolkit\"",
 					"\"$(SRCROOT)/../../../Library/Developer/BWToolkit\"",
 					"\"$(SRCROOT)/../../../../../Library/Developer/BWToolkit\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
