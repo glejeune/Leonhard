@@ -54,7 +54,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>0.2.0</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
@@ -63,5 +63,9 @@
 	<string>Leonhard Help</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>LeonhardHelp</string>
+	<key>SUFeedURL</key>
+	<string>http://algorithmique.net/leonhard/appcast.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
 </dict>
 </plist>

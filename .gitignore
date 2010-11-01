@@ -1,2 +1,5 @@
 .DS_Store
 build
+*.mode1v3
+*.pbxuser
+dsa_priv.pem
