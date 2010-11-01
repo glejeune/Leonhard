@@ -1,5 +1,12 @@
-h1. <span>2010-11-01</span> Release 0.1.0
+h1. <span>2010-11-01</span> Release 0.2.0
+
+h2. Just try it!
+
+* Use Fragaria with GraphViz syntax support.
+* Use Sparkle
+
+h1. <span>2010-09-02</span> Release 0.1.0
 
 h2. Initial release
 
-Yay! First release.
+More a POC than a tool.
