@@ -10,9 +10,9 @@ ChocTop::Configuration.new do |s|
   s.remote_dir = '/path/to/upload/root/of/app'
 
   # Custom DMG
-  # s.background_file = "background.jpg"
-  # s.app_icon_position = [100, 90]
-  # s.applications_icon_position =  [400, 90]
+  s.background_file = "background.png"
+  s.app_icon_position = [140, 300]
+  s.applications_icon_position =  [370, 300]
   # s.volume_icon = "dmg.icns"
   # s.applications_icon = "appicon.icns" # or "appicon.png"
 end

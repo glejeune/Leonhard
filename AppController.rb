@@ -12,10 +12,10 @@ class AppController
   attr_accessor :preferences
   attr_accessor :pdfView
   attr_accessor :codeView
-  attr_accessor :frageriaView
+  attr_accessor :fragariaView
   attr_accessor :errorsView
   attr_accessor :interpretorMenu
-  attr_accessor :frageria
+  attr_accessor :fragaria
 
   def initialize
     @fileName = nil
@@ -26,19 +26,20 @@ class AppController
   end
   
   def applicationDidFinishLaunching(aNotification)
-    @frageria = MGSFragaria.alloc.init
+    @fragaria = MGSFragaria.alloc.init
     
-    @frageria.setObject(NSNumber.numberWithBool(true), forKey:"isSyntaxColoured")
-    @frageria.setObject(NSNumber.numberWithBool(false), forKey:"showLineNumberGutter")
-#    @frageria.setObject(self, forKey:"MGSFODelegate")
+    @fragaria.setObject(NSNumber.numberWithBool(true), forKey:"isSyntaxColoured")
+    @fragaria.setObject(NSNumber.numberWithBool(true), forKey:"showLineNumberGutter")
+#    @fragaria.setObject(self, forKey:"MGSFODelegate")
 	
     # define our syntax definition
-    @frageria.setObject("GraphViz", forKey:"syntaxDefinition")
+    @fragaria.setObject("GraphViz", forKey:"syntaxDefinition")
     
     # embed editor in editView
-    @frageria.embedInView(@frageriaView)
+    @fragaria.embedInView(@fragariaView)
     
-    @codeView = @frageria.objectForKey("firstTextView")
+    # Get the textview
+    @codeView = @fragaria.objectForKey("firstTextView")
     
     # Set GraphVizGenerator
     @graphVizGenerator = GraphVizGenerator.new( @codeView, @errorsView, @pdfView, @preferences )
@@ -50,12 +51,12 @@ class AppController
       menuItem.state = NSOffState unless menuItem.title == @graphVizGenerator.interpretor
     end
 
+    loadDOTFile(@fileToOpen) if @fileToOpen
   end
 
   def application(sender, openFile:path)
-    loadDOTFile(path)
-
-    return YES
+    @fileToOpen = path
+    return true
   end
   
   def regenerate(sender)
@@ -99,9 +100,9 @@ class AppController
   def revertToSave(sender)
     unless @lastSavedScript.nil?
       # Set code
-      self.codeView.textStorage.mutableString.string = @lastSavedScript
+      @codeView.textStorage.mutableString.string = @lastSavedScript
       # Set default font
-      self.codeView.font = NSFont.fontWithName( "Courier", size:13 )
+      # self.codeView.font = NSFont.fontWithName( "Courier", size:13 )
     end
   end
 
@@ -117,9 +118,9 @@ class AppController
     @fileName = file
     # Set code
     @lastSavedScript = File.open( @fileName ).read
-    self.codeView.textStorage.mutableString.string = @lastSavedScript.clone
+    @codeView.textStorage.mutableString.string = @lastSavedScript.clone
     # Set default font
-    self.codeView.font = NSFont.fontWithName( "Courier", size:13 )
+    # self.codeView.font = NSFont.fontWithName( "Courier", size:13 )
     
     # mainWindow title
     @mainWindow.title = "#{File.basename(@fileName)} - Leonhard"

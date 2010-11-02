@@ -9,29 +9,38 @@ class Preferences
   attr_accessor :preferencesWindow
   attr_accessor :graphVizPath
   attr_accessor :autoGenerate
-  attr_accessor :syntaxHighlighting
+  attr_accessor :autocomplete
 
   def initialize
   end
   
   def awakeFromNib
-    # Load preferences
-		userDefaultsValuesPath=NSBundle.mainBundle.pathForResource("UserDefaults", ofType:"plist")
-		userDefaultsValuesDict=NSDictionary.dictionaryWithContentsOfFile(userDefaultsValuesPath)
-
-		@userDefaultsPrefs = NSUserDefaults.standardUserDefaults
-		@userDefaultsPrefs.registerDefaults(userDefaultsValuesDict)
+    # default preferences
+		@userDefaultsPrefs = NSUserDefaults.standardUserDefaults()
+    
+    # Fragaria
+    @userDefaultsPrefs.setObject(NSNumber.numberWithBool(true), forKey:"AutocompleteSuggestAutomatically")
+    @userDefaultsPrefs.setObject(NSNumber.numberWithBool(true), forKey:"LineWrapNewDocuments")
+    @userDefaultsPrefs.setObject(NSNumber.numberWithBool(true), forKey:"IndentWithSpaces")
+    @userDefaultsPrefs.setObject(NSNumber.numberWithBool(false), forKey:"AutocompleteSuggestAutomatically")
+    @userDefaultsPrefs.setObject(2, forKey:"TabWidth")
+    @userDefaultsPrefs.setObject(2, forKey:"IndentWidth")
+    @userDefaultsPrefs.setObject(NSArchiver.archivedDataWithRootObject(NSFont.fontWithName("Courier", size:13)), forKey:"TextFont")
+    
+    # Leonhard
+    @userDefaultsPrefs.setObject("", forKey:"GraphVizPath")
+    @userDefaultsPrefs.setObject(false, forKey:"Autogenerate")
     
     # Set preferences values
     @graphVizPath.stringValue = @userDefaultsPrefs.valueForKey("GraphVizPath").clone
     @autoGenerate.state = @userDefaultsPrefs.valueForKey("Autogenerate")
-    @syntaxHighlighting.state = @userDefaultsPrefs.valueForKey("isSyntaxColoured")
+    @autocomplete.state = @userDefaultsPrefs.valueForKey("AutocompleteSuggestAutomatically")    
   end
   
   def closePreferencesWindow(sender)
     @userDefaultsPrefs.setObject(@graphVizPath.stringValue(), forKey: "GraphVizPath")
     @userDefaultsPrefs.setObject((@autoGenerate.state == 1), forKey: "Autogenerate")
-    @userDefaultsPrefs.setObject(@syntaxHighlighting.state, forKey: "isSyntaxColoured")
+    @userDefaultsPrefs.setObject(@autocomplete.state, forKey: "AutocompleteSuggestAutomatically")
     @userDefaultsPrefs.synchronize
         
 		NSApp.endSheet(@preferencesWindow)
@@ -44,10 +53,6 @@ class Preferences
   
   def autogenerate?
     @userDefaultsPrefs.valueForKey("Autogenerate")
-  end
-  
-  def syntaxHighlighting?
-    @userDefaultsPrefs.valueForKey("SyntaxHighlighting") == 1
   end
   
   def gvPath

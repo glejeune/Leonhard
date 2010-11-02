@@ -44,7 +44,6 @@
 
 /* Begin PBXBuildFile section */
 		2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA9DA510CDF852007972A1 /* MainMenu.xib */; };
-		371D662D12008B12002A5AD5 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 371D662C12008B12002A5AD5 /* UserDefaults.plist */; };
 		371D663D12008B87002A5AD5 /* Preferences.rb in Resources */ = {isa = PBXBuildFile; fileRef = 371D663C12008B87002A5AD5 /* Preferences.rb */; };
 		373C1F3912030DE7007A93D3 /* GVPDFView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 373C1F3812030DE7007A93D3 /* GVPDFView.rb */; };
 		373C1F7712031576007A93D3 /* LeonhardHelp in Resources */ = {isa = PBXBuildFile; fileRef = 373C1F7412031576007A93D3 /* LeonhardHelp */; };
@@ -93,7 +92,6 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2BFA9DA610CDF852007972A1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		371D662C12008B12002A5AD5 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
 		371D663C12008B87002A5AD5 /* Preferences.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Preferences.rb; sourceTree = "<group>"; };
 		373C1F3812030DE7007A93D3 /* GVPDFView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = GVPDFView.rb; sourceTree = "<group>"; };
 		373C1F7412031576007A93D3 /* LeonhardHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LeonhardHelp; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 				2BFA9DA510CDF852007972A1 /* MainMenu.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				371D662C12008B12002A5AD5 /* UserDefaults.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -292,7 +289,6 @@
 				378AF8B2120038ED002499BB /* CodeViewDelegator.rb in Resources */,
 				378AF8ED12004084002499BB /* GVUtils.rb in Resources */,
 				373D3AD41200657F0091A32A /* GraphVizGenerator.rb in Resources */,
-				371D662D12008B12002A5AD5 /* UserDefaults.plist in Resources */,
 				371D663D12008B87002A5AD5 /* Preferences.rb in Resources */,
 				373C1F3912030DE7007A93D3 /* GVPDFView.rb in Resources */,
 				373C1F7712031576007A93D3 /* LeonhardHelp in Resources */,
