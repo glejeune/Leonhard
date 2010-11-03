@@ -23,19 +23,21 @@ Now you know that it works... badly, so make your corrections, commit them and s
 
 == CHANGELOG
 
-=== 0.0.4
+=== 0.5.0
+
+=== 0.4.0
 * Add XML import
 * Major bug correction in preferences 
 
-=== 0.0.3
+=== 0.3.0
 * Better Fragaria integration.
 * Update user preferences
 
-=== 0.0.2
+=== 0.2.0
 * Use Fragaria[http://github.com/glejeune/Fragaria] with GraphViz syntax support.
 * Use Sparkle[http://sparkle.andymatuschak.org]
 
-=== 0.0.1
+=== 0.1.0
 
 * Proof of concept
 
