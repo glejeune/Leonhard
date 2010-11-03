@@ -3,7 +3,7 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
 		<string key="IBDocument.SystemVersion">10F569</string>
-		<string key="IBDocument.InterfaceBuilderVersion">804</string>
+		<string key="IBDocument.InterfaceBuilderVersion">823</string>
 		<string key="IBDocument.AppKitVersion">1038.29</string>
 		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
@@ -16,14 +16,14 @@
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>804</string>
+				<string>823</string>
 				<string>1.1.0</string>
 				<string>1.2.5</string>
 			</object>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="495"/>
+			<integer value="537"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -307,6 +307,37 @@
 											<object class="NSMenuItem" id="14958254">
 												<reference key="NSMenu" ref="543486436"/>
 												<string key="NSTitle">ps</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="35465992"/>
+												<reference key="NSMixedImage" ref="807125248"/>
+											</object>
+										</object>
+									</object>
+								</object>
+								<object class="NSMenuItem" id="453865199">
+									<reference key="NSMenu" ref="720053764"/>
+									<string key="NSTitle">Import</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="807125248"/>
+									<string key="NSAction">submenuAction:</string>
+									<object class="NSMenu" key="NSSubmenu" id="888458345">
+										<string key="NSTitle">Import</string>
+										<object class="NSMutableArray" key="NSMenuItems">
+											<bool key="EncodedWithXMLCoder">YES</bool>
+											<object class="NSMenuItem" id="173571110">
+												<reference key="NSMenu" ref="888458345"/>
+												<string key="NSTitle">GraphML</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="35465992"/>
+												<reference key="NSMixedImage" ref="807125248"/>
+											</object>
+											<object class="NSMenuItem" id="870308625">
+												<reference key="NSMenu" ref="888458345"/>
+												<string key="NSTitle">XML</string>
 												<string key="NSKeyEquiv"/>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<reference key="NSOnImage" ref="35465992"/>
@@ -1260,6 +1291,7 @@
 																	</object>
 																	<string key="NSFrameSize">{346, 250}</string>
 																	<reference key="NSSuperview" ref="1057737908"/>
+																	<reference key="NSNextKeyView" ref="370633629"/>
 																	<reference key="NSDocView" ref="370633629"/>
 																	<reference key="NSBGColor" ref="290650808"/>
 																	<object class="NSCursor" key="NSCursor">
@@ -1292,6 +1324,7 @@
 															</object>
 															<string key="NSFrameSize">{361, 250}</string>
 															<reference key="NSSuperview" ref="589594524"/>
+															<reference key="NSNextKeyView" ref="646135218"/>
 															<int key="NSsFlags">16</int>
 															<reference key="NSVScroller" ref="336437492"/>
 															<reference key="NSHScroller" ref="844526635"/>
@@ -1559,7 +1592,7 @@
 				<nil key="NSViewClass"/>
 				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
 				<object class="NSView" key="NSWindowView" id="1047652991">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1730,7 +1763,6 @@
 						</object>
 					</object>
 					<string key="NSFrameSize">{346, 169}</string>
-					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
 				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
@@ -2328,6 +2360,22 @@
 						<reference key="destination" ref="1007515146"/>
 					</object>
 					<int key="connectionID">535</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">importGraphML:</string>
+						<reference key="source" ref="266957278"/>
+						<reference key="destination" ref="173571110"/>
+					</object>
+					<int key="connectionID">540</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">importXML:</string>
+						<reference key="source" ref="266957278"/>
+						<reference key="destination" ref="870308625"/>
+					</object>
+					<int key="connectionID">541</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3022,6 +3070,7 @@
 							<reference ref="117038363"/>
 							<reference ref="1023925487"/>
 							<reference ref="953098167"/>
+							<reference ref="453865199"/>
 						</object>
 						<reference key="parent" ref="379814623"/>
 					</object>
@@ -3401,6 +3450,35 @@
 						<reference key="object" ref="447329699"/>
 						<reference key="parent" ref="1007515146"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">536</int>
+						<reference key="object" ref="453865199"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="888458345"/>
+						</object>
+						<reference key="parent" ref="720053764"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">537</int>
+						<reference key="object" ref="888458345"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="173571110"/>
+							<reference ref="870308625"/>
+						</object>
+						<reference key="parent" ref="453865199"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">538</int>
+						<reference key="object" ref="173571110"/>
+						<reference key="parent" ref="888458345"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">539</int>
+						<reference key="object" ref="870308625"/>
+						<reference key="parent" ref="888458345"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -3624,6 +3702,11 @@
 					<string>530.IBPluginDependency</string>
 					<string>533.IBPluginDependency</string>
 					<string>534.IBPluginDependency</string>
+					<string>536.IBPluginDependency</string>
+					<string>537.IBEditorWindowLastContentRect</string>
+					<string>537.IBPluginDependency</string>
+					<string>538.IBPluginDependency</string>
+					<string>539.IBPluginDependency</string>
 					<string>56.IBPluginDependency</string>
 					<string>56.ImportedFromIB2</string>
 					<string>57.IBEditorWindowLastContentRect</string>
@@ -3879,6 +3962,11 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>{{302, 590}, {113, 43}}</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{20, 510}, {232, 203}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3900,7 +3988,7 @@
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>{{106, 510}, {196, 203}}</string>
+					<string>{{106, 490}, {196, 223}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{145, 474}, {199, 203}}</string>
@@ -3928,7 +4016,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">535</int>
+			<int key="maxID">541</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3943,6 +4031,8 @@
 							<string>export:</string>
 							<string>getInterpreter:</string>
 							<string>graphVizOnlineHelp:</string>
+							<string>importGraphML:</string>
+							<string>importXML:</string>
 							<string>openFile:</string>
 							<string>regenerate:</string>
 							<string>revertToSave:</string>
@@ -3951,6 +4041,8 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -3968,6 +4060,8 @@
 							<string>export:</string>
 							<string>getInterpreter:</string>
 							<string>graphVizOnlineHelp:</string>
+							<string>importGraphML:</string>
+							<string>importXML:</string>
 							<string>openFile:</string>
 							<string>regenerate:</string>
 							<string>revertToSave:</string>
@@ -3986,6 +4080,14 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">graphVizOnlineHelp:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">importGraphML:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">importXML:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
@@ -5188,7 +5290,7 @@
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>{10, 10}</string>
+				<string>{15, 15}</string>
 				<string>{32, 32}</string>
 				<string>{10, 10}</string>
 				<string>{9, 8}</string>

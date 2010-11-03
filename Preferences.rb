@@ -22,14 +22,14 @@ class Preferences
     @userDefaultsPrefs.setObject(NSNumber.numberWithBool(true), forKey:"AutocompleteSuggestAutomatically")
     @userDefaultsPrefs.setObject(NSNumber.numberWithBool(true), forKey:"LineWrapNewDocuments")
     @userDefaultsPrefs.setObject(NSNumber.numberWithBool(true), forKey:"IndentWithSpaces")
-    @userDefaultsPrefs.setObject(NSNumber.numberWithBool(false), forKey:"AutocompleteSuggestAutomatically")
+    @userDefaultsPrefs.setObject(NSNumber.numberWithBool(false), forKey:"AutocompleteSuggestAutomatically") if @userDefaultsPrefs.valueForKey("AutocompleteSuggestAutomatically").nil?
     @userDefaultsPrefs.setObject(2, forKey:"TabWidth")
     @userDefaultsPrefs.setObject(2, forKey:"IndentWidth")
     @userDefaultsPrefs.setObject(NSArchiver.archivedDataWithRootObject(NSFont.fontWithName("Courier", size:13)), forKey:"TextFont")
     
     # Leonhard
-    @userDefaultsPrefs.setObject("", forKey:"GraphVizPath")
-    @userDefaultsPrefs.setObject(false, forKey:"Autogenerate")
+    @userDefaultsPrefs.setObject("", forKey:"GraphVizPath") if @userDefaultsPrefs.valueForKey("GraphVizPath").nil?
+    @userDefaultsPrefs.setObject(false, forKey:"Autogenerate") if @userDefaultsPrefs.valueForKey("Autogenerate").nil?
     
     # Set preferences values
     @graphVizPath.stringValue = @userDefaultsPrefs.valueForKey("GraphVizPath").clone
@@ -57,5 +57,9 @@ class Preferences
   
   def gvPath
     @userDefaultsPrefs.valueForKey("GraphVizPath")
+  end
+  
+  def [](x) 
+    @userDefaultsPrefs.valueForKey(x)
   end
 end

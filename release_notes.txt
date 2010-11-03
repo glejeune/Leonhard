@@ -1,6 +1,11 @@
+h1. <span>2010-11-03</span> Release 0.4.0
+
+* Add XML import
+* Major bug correction in preferences
+
 h1. <span>2010-11-02</span> Release 0.3.0
 
-* Better Fragaria integration.
+* Better Fragaria integration
 * Update user preferences
 
 h1. <span>2010-11-01</span> Release 0.2.0

@@ -103,11 +103,14 @@ class AppController
       @codeView.textStorage.mutableString.string = @lastSavedScript
       # Set default font
       # self.codeView.font = NSFont.fontWithName( "Courier", size:13 )
+      @codeView.font = NSUnarchiver.unarchiveObjectWithData(@preferences["TextFont"])
     end
   end
 
   def openFile(sender)
     panel = NSOpenPanel.openPanel()
+    panel.setAllowedFileTypes(["dot", "gv"])
+    panel.setAllowsOtherFileTypes(false)
     ret = panel.runModal()
     if ret == NSFileHandlingPanelOKButton
       loadDOTFile( panel.URL.path )
@@ -120,7 +123,8 @@ class AppController
     @lastSavedScript = File.open( @fileName ).read
     @codeView.textStorage.mutableString.string = @lastSavedScript.clone
     # Set default font
-    # self.codeView.font = NSFont.fontWithName( "Courier", size:13 )
+    # @codeView.font = NSFont.fontWithName( "Courier", size:13 )
+    @codeView.font = NSUnarchiver.unarchiveObjectWithData(@preferences["TextFont"]) 
     
     # mainWindow title
     @mainWindow.title = "#{File.basename(@fileName)} - Leonhard"
@@ -138,4 +142,41 @@ class AppController
     end
   end
 
+  def importGraphML(sender)
+    alert = NSAlert.alloc.init
+    alert.addButtonWithTitle("Don't worry...")
+    alert.setMessageText("Not yet implemented!")
+    alert.setInformativeText("Sorry Dude!")
+    alert.setAlertStyle(NSWarningAlertStyle)
+    alert.runModal()
+    return
+
+    panel = NSOpenPanel.openPanel()
+    panel.setAllowedFileTypes(["graphml", "xml", "gml"])
+    panel.setAllowsOtherFileTypes(false)
+    ret = panel.runModal()
+    if ret == NSFileHandlingPanelOKButton
+      # loadGraphMLFile( panel.URL.path )
+    end
+  end
+  
+  
+  
+  def importXML(sender)
+    panel = NSOpenPanel.openPanel()
+    panel.setAllowedFileTypes(["xml"])
+    panel.setAllowsOtherFileTypes(false)
+    ret = panel.runModal()
+    if ret == NSFileHandlingPanelOKButton
+      @fileName = nil
+      # Set code
+      @lastSavedScript = nil
+      @codeView.textStorage.mutableString.string = XMLDocument.new(panel.URL.path).dot
+      # Set default font
+      @codeView.font = NSUnarchiver.unarchiveObjectWithData(@preferences["TextFont"]) 
+    
+      # mainWindow title
+      @mainWindow.title = "[unsaved] - Leonhard"
+    end
+  end
 end

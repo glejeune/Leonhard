@@ -60,6 +60,7 @@
 		378AF8A512003703002499BB /* graph.icns in Resources */ = {isa = PBXBuildFile; fileRef = 378AF8A412003703002499BB /* graph.icns */; };
 		378AF8B2120038ED002499BB /* CodeViewDelegator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 378AF8B1120038ED002499BB /* CodeViewDelegator.rb */; };
 		378AF8ED12004084002499BB /* GVUtils.rb in Resources */ = {isa = PBXBuildFile; fileRef = 378AF8EC12004084002499BB /* GVUtils.rb */; };
+		37B9FA1C1281EB1400A6638E /* XMLDocument.rb in Resources */ = {isa = PBXBuildFile; fileRef = 37B9FA1B1281EB1400A6638E /* XMLDocument.rb */; };
 		4DE339F70D74FCDD00ADB6EE /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4DE339F60D74FCDD00ADB6EE /* rb_main.rb */; };
 		4DE3BE140D8651D900ECA448 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE3BE130D8651D900ECA448 /* MacRuby.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -106,6 +107,7 @@
 		378AF8B1120038ED002499BB /* CodeViewDelegator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = CodeViewDelegator.rb; sourceTree = "<group>"; };
 		378AF8EC12004084002499BB /* GVUtils.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = GVUtils.rb; sourceTree = "<group>"; };
 		37A6C1561206CBA500C0EC90 /* README.rdoc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.rdoc; sourceTree = "<group>"; };
+		37B9FA1B1281EB1400A6638E /* XMLDocument.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = XMLDocument.rb; sourceTree = "<group>"; };
 		4DE339F60D74FCDD00ADB6EE /* rb_main.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		4DE3BE130D8651D900ECA448 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				373D3AD31200657F0091A32A /* GraphVizGenerator.rb */,
 				371D663C12008B87002A5AD5 /* Preferences.rb */,
 				373C1F3812030DE7007A93D3 /* GVPDFView.rb */,
+				37B9FA1B1281EB1400A6638E /* XMLDocument.rb */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				373C1F3912030DE7007A93D3 /* GVPDFView.rb in Resources */,
 				373C1F7712031576007A93D3 /* LeonhardHelp in Resources */,
 				37652ACF127F19B000356007 /* dsa_pub.pem in Resources */,
+				37B9FA1C1281EB1400A6638E /* XMLDocument.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

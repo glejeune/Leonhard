@@ -23,6 +23,10 @@ Now you know that it works... badly, so make your corrections, commit them and s
 
 == CHANGELOG
 
+=== 0.0.4
+* Add XML import
+* Major bug correction in preferences 
+
 === 0.0.3
 * Better Fragaria integration.
 * Update user preferences
