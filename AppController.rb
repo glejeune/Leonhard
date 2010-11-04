@@ -23,6 +23,25 @@ class AppController
   end
 
   def awakeFromNib
+    @mainWindow.setDelegate(self)
+  end
+  
+  def applicationShouldTerminate(sender)
+    return saveIfNeeded()
+  end
+  
+  def windowShouldClose(sender)
+    if saveIfNeeded()
+      @fileName = nil
+      @lastSavedScript = nil
+      @codeView.textStorage.mutableString.string = ""
+      @codeView.font = NSUnarchiver.unarchiveObjectWithData(@preferences["TextFont"]) 
+      @mainWindow.title = "Leonhard"
+
+      return true
+    end
+    
+    return false
   end
   
   def applicationDidFinishLaunching(aNotification)
@@ -72,6 +91,17 @@ class AppController
     regenerate(sender) if @preferences.autogenerate?
   end
   
+  def newDocument(sender)
+    return if saveIfNeeded() == false 
+    
+    @mainWindow.orderFront(sender)
+    @fileName = nil
+    @lastSavedScript = nil
+    @codeView.textStorage.mutableString.string = ""
+    @codeView.font = NSUnarchiver.unarchiveObjectWithData(@preferences["TextFont"]) 
+    @mainWindow.title = "Leonhard"
+  end
+  
   def saveAs(sender)
     panel = NSSavePanel.savePanel()
     ret = panel.runModal()
@@ -108,6 +138,8 @@ class AppController
   end
 
   def openFile(sender)
+    return if saveIfNeeded() == false 
+    
     panel = NSOpenPanel.openPanel()
     panel.setAllowedFileTypes(["dot", "gv"])
     panel.setAllowsOtherFileTypes(false)
@@ -143,26 +175,32 @@ class AppController
   end
 
   def importGraphML(sender)
-    alert = NSAlert.alloc.init
-    alert.addButtonWithTitle("Don't worry...")
-    alert.setMessageText("Not yet implemented!")
-    alert.setInformativeText("Sorry Dude!")
-    alert.setAlertStyle(NSWarningAlertStyle)
-    alert.runModal()
-    return
-
+    return if saveIfNeeded() == false 
+    
     panel = NSOpenPanel.openPanel()
-    panel.setAllowedFileTypes(["graphml", "xml", "gml"])
+    panel.setAllowedFileTypes(["graphml", "gml", "xml"])
     panel.setAllowsOtherFileTypes(false)
     ret = panel.runModal()
     if ret == NSFileHandlingPanelOKButton
-      # loadGraphMLFile( panel.URL.path )
+      begin
+        @fileName = nil
+        # Set code
+        @lastSavedScript = nil
+        @codeView.textStorage.mutableString.string = GraphMLDocument.new(panel.URL.path).dot
+        # Set default font
+        @codeView.font = NSUnarchiver.unarchiveObjectWithData(@preferences["TextFont"]) 
+    
+        # mainWindow title
+        @mainWindow.title = "Leonhard"
+      rescue => e
+        errorMessage("GraphML import error!", e.message)
+      end
     end
   end
   
-  
-  
   def importXML(sender)
+    return if saveIfNeeded() == false 
+    
     panel = NSOpenPanel.openPanel()
     panel.setAllowedFileTypes(["xml"])
     panel.setAllowsOtherFileTypes(false)
@@ -176,7 +214,44 @@ class AppController
       @codeView.font = NSUnarchiver.unarchiveObjectWithData(@preferences["TextFont"]) 
     
       # mainWindow title
-      @mainWindow.title = "[unsaved] - Leonhard"
+      @mainWindow.title = "Leonhard"
     end
+  end
+  
+  def saveIfNeeded
+    rcod = true
+    data = self.codeView.textStorage.string.clone
+    data = nil if data.strip.empty?
+    unless @lastSavedScript == data
+      documentName = "???"
+      alert = NSAlert.alloc.init
+      alert.addButtonWithTitle("Save")
+      alert.addButtonWithTitle("Cancel")
+      alert.addButtonWithTitle("Don't save")
+      alert.setMessageText("Do you want to save the changes you made in the document #{documentName}?")
+      alert.setInformativeText("Your changes will be lost if you don't save them.")
+      alert.setAlertStyle(NSWarningAlertStyle)
+      ret = alert.runModal()
+      case ret
+        when NSAlertFirstButtonReturn
+          save(self)
+          rcod = true
+        when NSAlertThirdButtonReturn
+          rcod = true
+        else
+          rcod = false
+      end
+    end
+      
+    return rcod
+  end
+  
+  def errorMessage(message, info)
+    alert = NSAlert.alloc.init
+    alert.addButtonWithTitle("Ok")
+    alert.setMessageText(message)
+    alert.setInformativeText(info)
+    alert.setAlertStyle(NSWarningAlertStyle)
+    alert.runModal()    
   end
 end

@@ -24,6 +24,10 @@ Now you know that it works... badly, so make your corrections, commit them and s
 == CHANGELOG
 
 === 0.5.0
+* Add GraphML import
+* Update preferences
+* Ask if we need to save the document, when needed
+* Bugs corrections
 
 === 0.4.0
 * Add XML import

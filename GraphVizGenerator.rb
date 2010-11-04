@@ -41,8 +41,10 @@ class GraphVizGenerator
     if errors.nil? or errors.strip.empty?
       @errorsView.textStorage.mutableString.string = "0 error!"
     else
-      @errorsView.textStorage.mutableString.string = errors
+      @errorsView.textStorage.mutableString.string = errors.gsub( dotFile, "" )
     end
+    @errorsView.font = NSUnarchiver.unarchiveObjectWithData(@preferences["TextFont"]) 
+    
     @pdfView.document = PDFDocument.alloc.initWithURL( NSURL.fileURLWithPath(outFile) ) if @file.nil?
     
     t.unlink

@@ -10,8 +10,17 @@ class Preferences
   attr_accessor :graphVizPath
   attr_accessor :autoGenerate
   attr_accessor :autocomplete
+  attr_accessor :suuAutomaticallyChecksForUpdates
+  attr_accessor :suuInterval
+  attr_accessor :suuAutomaticallyDownloadsUpdates
 
   def initialize
+    @suuIntervalsDef = {
+      "Every hour" => 3600, 
+      "Every day" => 86400,
+      "Every week" => 604800, 
+      "Every month" => 2592000
+    }
   end
   
   def awakeFromNib
@@ -19,7 +28,6 @@ class Preferences
 		@userDefaultsPrefs = NSUserDefaults.standardUserDefaults()
     
     # Fragaria
-    @userDefaultsPrefs.setObject(NSNumber.numberWithBool(true), forKey:"AutocompleteSuggestAutomatically")
     @userDefaultsPrefs.setObject(NSNumber.numberWithBool(true), forKey:"LineWrapNewDocuments")
     @userDefaultsPrefs.setObject(NSNumber.numberWithBool(true), forKey:"IndentWithSpaces")
     @userDefaultsPrefs.setObject(NSNumber.numberWithBool(false), forKey:"AutocompleteSuggestAutomatically") if @userDefaultsPrefs.valueForKey("AutocompleteSuggestAutomatically").nil?
@@ -34,15 +42,27 @@ class Preferences
     # Set preferences values
     @graphVizPath.stringValue = @userDefaultsPrefs.valueForKey("GraphVizPath").clone
     @autoGenerate.state = @userDefaultsPrefs.valueForKey("Autogenerate")
-    @autocomplete.state = @userDefaultsPrefs.valueForKey("AutocompleteSuggestAutomatically")    
+    @autocomplete.state = @userDefaultsPrefs.valueForKey("AutocompleteSuggestAutomatically")
+    
+    # SUUpdater
+    @suuAutomaticallyChecksForUpdates.state = SUUpdater.sharedUpdater.automaticallyChecksForUpdates
+    @suuInterval.removeAllItems
+    @suuInterval.addItemsWithTitles(@suuIntervalsDef.keys)
+    @suuInterval.selectItemWithTitle(@suuIntervalsDef.invert[Integer(SUUpdater.sharedUpdater.updateCheckInterval)])
+    @suuAutomaticallyDownloadsUpdates.state = SUUpdater.sharedUpdater.automaticallyDownloadsUpdates
   end
   
   def closePreferencesWindow(sender)
     @userDefaultsPrefs.setObject(@graphVizPath.stringValue(), forKey: "GraphVizPath")
     @userDefaultsPrefs.setObject((@autoGenerate.state == 1), forKey: "Autogenerate")
-    @userDefaultsPrefs.setObject(@autocomplete.state, forKey: "AutocompleteSuggestAutomatically")
+    @userDefaultsPrefs.setObject((@autocomplete.state == 1), forKey: "AutocompleteSuggestAutomatically")
     @userDefaultsPrefs.synchronize
-        
+    
+    # SUU
+    SUUpdater.sharedUpdater.setAutomaticallyChecksForUpdates(@suuAutomaticallyChecksForUpdates.state == 1)
+    SUUpdater.sharedUpdater.setUpdateCheckInterval(@suuIntervalsDef[@suuInterval.titleOfSelectedItem])
+    SUUpdater.sharedUpdater.setAutomaticallyDownloadsUpdates(@suuAutomaticallyDownloadsUpdates.state == 1)
+    
 		NSApp.endSheet(@preferencesWindow)
 		@preferencesWindow.orderOut(sender)
 	end
@@ -61,5 +81,5 @@ class Preferences
   
   def [](x) 
     @userDefaultsPrefs.valueForKey(x)
-  end
+  end  
 end

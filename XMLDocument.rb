@@ -47,7 +47,7 @@ class XMLDocument
 	
 	    label << "}"
 	  end
-	  @oGraph << "\t#{xLocalNodeName}[label=\"#{label}\", color=\"blue\", shape=\"record\"];\n"
+	  @oGraph << "  #{xLocalNodeName}[label=\"#{label}\", color=\"blue\", shape=\"record\"];\n"
   
     ## Act: Search and add Text nodes
     if oXMLNode.has_text? == true and @bShowText == true
@@ -65,8 +65,8 @@ class XMLDocument
       end
   
       if xText.length > 0
-    	  @oGraph << "\t#{xTextNodeName}[label=\"#{xText}\", color=\"black\", shape=\"ellipse\"];\n"
-    	  @oGraph << "\t#{xLocalNodeName} -> #{xTextNodeName}\n"
+    	  @oGraph << "  #{xTextNodeName}[label=\"#{xText}\", color=\"black\", shape=\"ellipse\"];\n"
+    	  @oGraph << "  #{xLocalNodeName} -> #{xTextNodeName}\n"
       end
     end
   
@@ -75,7 +75,7 @@ class XMLDocument
   
     oXMLNode.each_element( ) do |oXMLChild|
       xChildNodeName = _init( oXMLChild )
-      @oGraph << "\t#{xLocalNodeName} -> #{xChildNodeName}\n"
+      @oGraph << "  #{xLocalNodeName} -> #{xChildNodeName}\n"
     end
   
     return( xLocalNodeName )
