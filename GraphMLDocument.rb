@@ -189,12 +189,12 @@ class GraphMLDocument
   end
   
   def graphml_graph_edge( node )
-    source = node.attributes['source']
-    source = "\"#{source}\":\"#{node.attributes['sourceport']}\"" if node.attributes['sourceport']
-    target = node.attributes['target']
-    target = "\"#{target}\":\"#{node.attributes['targetport']}\"" if node.attributes['targetport']
+    source = "\"#{node.attributes['source']}\""
+    source = "#{source}:\"#{node.attributes['sourceport']}\"" if node.attributes['sourceport']
+    target = "\"#{node.attributes['target']}\""
+    target = "#{target}:\"#{node.attributes['targetport']}\"" if node.attributes['targetport']
     
-    @current_graph << " "*@indent + "\"#{source}\" #{@edge_type} \"#{target}\""
+    @current_graph << " "*@indent + "#{source} #{@edge_type} #{target}"
 
     sep = "["
     node.each_element( ) do |child|

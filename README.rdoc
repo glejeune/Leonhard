@@ -23,6 +23,9 @@ Now you know that it works... badly, so make your corrections, commit them and s
 
 == CHANGELOG
 
+=== 0.6.0
+* Bug correction in GraphML support
+
 === 0.5.0
 * Add GraphML import
 * Update preferences
