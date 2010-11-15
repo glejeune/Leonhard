@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
-		<string key="IBDocument.SystemVersion">10F569</string>
+		<string key="IBDocument.SystemVersion">10H574</string>
 		<string key="IBDocument.InterfaceBuilderVersion">823</string>
-		<string key="IBDocument.AppKitVersion">1038.29</string>
+		<string key="IBDocument.AppKitVersion">1038.35</string>
 		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -23,6 +23,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="537"/>
 			<integer value="516"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
@@ -330,6 +331,22 @@
 											<object class="NSMenuItem" id="173571110">
 												<reference key="NSMenu" ref="888458345"/>
 												<string key="NSTitle">GraphML</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="35465992"/>
+												<reference key="NSMixedImage" ref="807125248"/>
+											</object>
+											<object class="NSMenuItem" id="359299258">
+												<reference key="NSMenu" ref="888458345"/>
+												<string key="NSTitle">GML</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="35465992"/>
+												<reference key="NSMixedImage" ref="807125248"/>
+											</object>
+											<object class="NSMenuItem" id="247642685">
+												<reference key="NSMenu" ref="888458345"/>
+												<string key="NSTitle">GXL</string>
 												<string key="NSKeyEquiv"/>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<reference key="NSOnImage" ref="35465992"/>
@@ -1203,7 +1220,7 @@
 																		<object class="NSTextView" id="370633629">
 																			<reference key="NSNextResponder" ref="646135218"/>
 																			<int key="NSvFlags">2322</int>
-																			<string key="NSFrameSize">{346, 0}</string>
+																			<string key="NSFrame">{{0, -14}, {346, 14}}</string>
 																			<reference key="NSSuperview" ref="646135218"/>
 																			<object class="NSTextContainer" key="NSTextContainer" id="578120143">
 																				<object class="NSLayoutManager" key="NSLayoutManager">
@@ -2549,6 +2566,22 @@
 					</object>
 					<int key="connectionID">570</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">importGML:</string>
+						<reference key="source" ref="266957278"/>
+						<reference key="destination" ref="359299258"/>
+					</object>
+					<int key="connectionID">598</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">importGXL:</string>
+						<reference key="source" ref="266957278"/>
+						<reference key="destination" ref="247642685"/>
+					</object>
+					<int key="connectionID">599</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -3634,6 +3667,8 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="173571110"/>
 							<reference ref="870308625"/>
+							<reference ref="359299258"/>
+							<reference ref="247642685"/>
 						</object>
 						<reference key="parent" ref="453865199"/>
 					</object>
@@ -3734,6 +3769,16 @@
 						<int key="objectID">562</int>
 						<reference key="object" ref="43316266"/>
 						<reference key="parent" ref="323590919"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">596</int>
+						<reference key="object" ref="359299258"/>
+						<reference key="parent" ref="888458345"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">597</int>
+						<reference key="object" ref="247642685"/>
+						<reference key="parent" ref="888458345"/>
 					</object>
 				</object>
 			</object>
@@ -3988,6 +4033,8 @@
 					<string>57.editorWindowContentRectSynchronizationRect</string>
 					<string>58.IBPluginDependency</string>
 					<string>58.ImportedFromIB2</string>
+					<string>596.IBPluginDependency</string>
+					<string>597.IBPluginDependency</string>
 					<string>72.IBPluginDependency</string>
 					<string>72.ImportedFromIB2</string>
 					<string>73.IBPluginDependency</string>
@@ -4240,7 +4287,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{302, 590}, {113, 43}}</string>
+					<string>{{302, 550}, {113, 83}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4276,6 +4323,8 @@
 					<string>{{23, 794}, {245, 183}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4318,7 +4367,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">595</int>
+			<int key="maxID">599</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4334,6 +4383,8 @@
 							<string>export:</string>
 							<string>getInterpreter:</string>
 							<string>graphVizOnlineHelp:</string>
+							<string>importGML:</string>
+							<string>importGXL:</string>
 							<string>importGraphML:</string>
 							<string>importXML:</string>
 							<string>newDocument:</string>
@@ -4359,6 +4410,8 @@
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
+							<string>id</string>
+							<string>id</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="actionInfosByName">
@@ -4369,6 +4422,8 @@
 							<string>export:</string>
 							<string>getInterpreter:</string>
 							<string>graphVizOnlineHelp:</string>
+							<string>importGML:</string>
+							<string>importGXL:</string>
 							<string>importGraphML:</string>
 							<string>importXML:</string>
 							<string>newDocument:</string>
@@ -4395,6 +4450,14 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">graphVizOnlineHelp:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">importGML:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">importGXL:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">

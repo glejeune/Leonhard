@@ -2,7 +2,7 @@
 # Leonhard
 #
 # Created by greg on 28/07/10.
-# Copyright 2010 __MyCompanyName__. All rights reserved.
+# Copyright 2010 Gregoire Lejeune. All rights reserved.
 
 class Preferences
   attr_accessor :mainWindow

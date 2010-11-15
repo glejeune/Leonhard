@@ -25,6 +25,9 @@ Now you know that it works... badly, so make your corrections, commit them and s
 
 === 0.6.0
 * Bug correction in GraphML support
+* Add GML[http://www.infosun.fim.uni-passau.de/Graphlet/GML/] import
+* Add GXL[http://www.gupro.de/GXL/index.html] import
+* Bugs corrections in open panels
 
 === 0.5.0
 * Add GraphML import

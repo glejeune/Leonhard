@@ -2,12 +2,15 @@
 # Leonhard
 #
 # Created by greg on 28/07/10.
-# Copyright 2010 __MyCompanyName__. All rights reserved.
+# Copyright 2010 Gregoire Lejeune. All rights reserved.
 
 #require 'CodeViewDelegator'
 #require 'GraphVizGenerator'
+require 'GVUtils'
 
 class AppController
+  include GVUtils
+  
   attr_accessor :mainWindow
   attr_accessor :preferences
   attr_accessor :pdfView
@@ -141,9 +144,11 @@ class AppController
     return if saveIfNeeded() == false 
     
     panel = NSOpenPanel.openPanel()
-    panel.setAllowedFileTypes(["dot", "gv"])
-    panel.setAllowsOtherFileTypes(false)
-    ret = panel.runModal()
+    panel.title = "Select GraphViz File"
+    panel.canChooseFiles = true
+#    panel.allowedFileTypes = ["dot", "gv"]
+#    ret = panel.runModal()
+    ret = panel.runModalForTypes(["dot", "gv"])
     if ret == NSFileHandlingPanelOKButton
       loadDOTFile( panel.URL.path )
     end
@@ -178,9 +183,10 @@ class AppController
     return if saveIfNeeded() == false 
     
     panel = NSOpenPanel.openPanel()
-    panel.setAllowedFileTypes(["graphml", "gml", "xml"])
-    panel.setAllowsOtherFileTypes(false)
-    ret = panel.runModal()
+    panel.setCanChooseFiles(true)
+#    panel.setAllowedFileTypes(["graphml", "gml", "xml"])
+#    ret = panel.runModal()
+    ret = panel.runModalForTypes(["graphml", "gml", "xml"])
     if ret == NSFileHandlingPanelOKButton
       begin
         @fileName = nil
@@ -202,14 +208,73 @@ class AppController
     return if saveIfNeeded() == false 
     
     panel = NSOpenPanel.openPanel()
-    panel.setAllowedFileTypes(["xml"])
-    panel.setAllowsOtherFileTypes(false)
-    ret = panel.runModal()
+    panel.setCanChooseFiles(true)
+#    panel.setAllowedFileTypes(["xml"])
+#    ret = panel.runModal()
+    ret = panel.runModalForTypes(["xml"])
     if ret == NSFileHandlingPanelOKButton
       @fileName = nil
       # Set code
       @lastSavedScript = nil
       @codeView.textStorage.mutableString.string = XMLDocument.new(panel.URL.path).dot
+      # Set default font
+      @codeView.font = NSUnarchiver.unarchiveObjectWithData(@preferences["TextFont"]) 
+    
+      # mainWindow title
+      @mainWindow.title = "Leonhard"
+    end
+  end
+  
+  def importGML(sender)
+    return if saveIfNeeded() == false 
+    
+    panel = NSOpenPanel.openPanel()
+    panel.setCanChooseFiles(true)
+#    panel.setAllowedFileTypes(["gml"])
+#    ret = panel.runModal()
+    ret = panel.runModalForTypes(["gml"])
+    if ret == NSFileHandlingPanelOKButton
+      @fileName = nil
+      # Set code
+      @lastSavedScript = nil
+      # Import
+      dotExe = unless @preferences.gvPath.strip.empty?
+        File.join( @preferences.gvPath, "gml2gv" )
+      else
+        @interpretor
+      end
+      xCmd = "#{dotExe} #{panel.URL.path}"
+      output, errors = output_and_errors_from_command( xCmd )
+      @codeView.textStorage.mutableString.string = output
+      # Set default font
+      @codeView.font = NSUnarchiver.unarchiveObjectWithData(@preferences["TextFont"]) 
+    
+      # mainWindow title
+      @mainWindow.title = "Leonhard"
+    end
+  end
+  
+  def importGXL(sender)
+    return if saveIfNeeded() == false 
+    
+    panel = NSOpenPanel.openPanel()
+    panel.setCanChooseFiles(true)
+#    panel.setAllowedFileTypes(["gxl"])
+#    ret = panel.runModal()
+    ret = panel.runModalForTypes(["gxl"])
+    if ret == NSFileHandlingPanelOKButton
+      @fileName = nil
+      # Set code
+      @lastSavedScript = nil
+      # import
+      dotExe = unless @preferences.gvPath.strip.empty?
+        File.join( @preferences.gvPath, "gxl2gv" )
+      else
+        @interpretor
+      end
+      xCmd = "#{dotExe} #{panel.URL.path}"
+      output, errors = output_and_errors_from_command( xCmd )
+      @codeView.textStorage.mutableString.string = output
       # Set default font
       @codeView.font = NSUnarchiver.unarchiveObjectWithData(@preferences["TextFont"]) 
     
