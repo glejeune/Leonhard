@@ -23,6 +23,9 @@ Now you know that it works... badly, so make your corrections, commit them and s
 
 == CHANGELOG
 
+=== 0.7.0
+* Update to MacRuby 0.8
+
 === 0.6.0
 * Bug correction in GraphML support
 * Add GML[http://www.infosun.fim.uni-passau.de/Graphlet/GML/] import

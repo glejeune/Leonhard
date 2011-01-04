@@ -1,3 +1,7 @@
+h1. <span>2011-01-05</span> Release 0.7.0
+
+* Work with MacRuby 0.8
+
 h1. <span>2010-11-15</span> Release 0.6.0
 
 * Bug correction in GraphML support
