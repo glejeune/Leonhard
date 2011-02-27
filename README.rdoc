@@ -23,8 +23,13 @@ Now you know that it works... badly, so make your corrections, commit them and s
 
 == CHANGELOG
 
-=== 0.8.0
+=== 0.9.0
 * Update to BWToolkit 1.2.5
+
+=== 0.8.0
+* Work with MacRuby 0.9
+* MacRuby is now embedded in Leonhard. You no longer need to install it.
+* New About Window ;)
 
 === 0.7.0
 * Update to MacRuby 0.8
