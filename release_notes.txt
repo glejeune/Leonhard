@@ -1,3 +1,9 @@
+h1. <span>2011-02-26</span> Release 0.8.0
+
+* Work with MacRuby 0.9
+* MacRuby is now embedded in Leonhard. You no longer need to install it.
+* New About Window ;)
+
 h1. <span>2011-01-05</span> Release 0.7.0
 
 * Work with MacRuby 0.8
