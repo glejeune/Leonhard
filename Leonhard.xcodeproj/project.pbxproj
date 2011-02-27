@@ -48,6 +48,8 @@
 		373C1F3912030DE7007A93D3 /* GVPDFView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 373C1F3812030DE7007A93D3 /* GVPDFView.rb */; };
 		373C1F7712031576007A93D3 /* LeonhardHelp in Resources */ = {isa = PBXBuildFile; fileRef = 373C1F7412031576007A93D3 /* LeonhardHelp */; };
 		373D3AD41200657F0091A32A /* GraphVizGenerator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 373D3AD31200657F0091A32A /* GraphVizGenerator.rb */; };
+		3742A1681319DE7E00468155 /* SlideDetailCollapse_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 3742A1661319DE7E00468155 /* SlideDetailCollapse_h.png */; };
+		3742A1691319DE7E00468155 /* SlideDetailReveal_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 3742A1671319DE7E00468155 /* SlideDetailReveal_h.png */; };
 		37652ACF127F19B000356007 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 37652ACE127F19B000356007 /* dsa_pub.pem */; };
 		3786279A127EE5C90010307B /* MGSFragaria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37862799127EE5C90010307B /* MGSFragaria.framework */; };
 		3786279F127EE6100010307B /* MGSFragaria.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37862799127EE5C90010307B /* MGSFragaria.framework */; };
@@ -99,6 +101,8 @@
 		373C1F3812030DE7007A93D3 /* GVPDFView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = GVPDFView.rb; sourceTree = "<group>"; };
 		373C1F7412031576007A93D3 /* LeonhardHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LeonhardHelp; sourceTree = "<group>"; };
 		373D3AD31200657F0091A32A /* GraphVizGenerator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = GraphVizGenerator.rb; sourceTree = "<group>"; };
+		3742A1661319DE7E00468155 /* SlideDetailCollapse_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SlideDetailCollapse_h.png; sourceTree = "<group>"; };
+		3742A1671319DE7E00468155 /* SlideDetailReveal_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SlideDetailReveal_h.png; sourceTree = "<group>"; };
 		37652ACE127F19B000356007 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		37862799127EE5C90010307B /* MGSFragaria.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MGSFragaria.framework; sourceTree = "<group>"; };
 		3787FAF4127EE7990054304C /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BWToolkitFramework.framework; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3742A1661319DE7E00468155 /* SlideDetailCollapse_h.png */,
+				3742A1671319DE7E00468155 /* SlideDetailReveal_h.png */,
 				37652ACE127F19B000356007 /* dsa_pub.pem */,
 				373C1F7412031576007A93D3 /* LeonhardHelp */,
 				378AF8A412003703002499BB /* graph.icns */,
@@ -306,6 +312,8 @@
 				37B9FA1C1281EB1400A6638E /* XMLDocument.rb in Resources */,
 				37B7814B1282CF4600D2B04C /* GraphMLDocument.rb in Resources */,
 				37E649F21316EA7D00BCA54A /* About.rb in Resources */,
+				3742A1681319DE7E00468155 /* SlideDetailCollapse_h.png in Resources */,
+				3742A1691319DE7E00468155 /* SlideDetailReveal_h.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
