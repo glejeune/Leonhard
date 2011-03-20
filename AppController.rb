@@ -146,9 +146,8 @@ class AppController
     panel = NSOpenPanel.openPanel()
     panel.title = "Select GraphViz File"
     panel.canChooseFiles = true
-#    panel.allowedFileTypes = ["dot", "gv"]
-#    ret = panel.runModal()
-    ret = panel.runModalForTypes(["dot", "gv"])
+    panel.allowedFileTypes = ["dot", "gv"]
+    ret = panel.runModal()
     if ret == NSFileHandlingPanelOKButton
       loadDOTFile( panel.URL.path )
     end

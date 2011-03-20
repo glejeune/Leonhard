@@ -5,6 +5,8 @@
 # Copyright 2010 Gregoire Lejeune. All rights reserved.
 
 class Preferences
+  include GVUtils
+
   attr_accessor :mainWindow
   attr_accessor :preferencesWindow
   attr_accessor :graphVizPath
@@ -24,6 +26,9 @@ class Preferences
   end
   
   def awakeFromNib
+    # Change notifier for graphVizPath
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: :"graphVizPathDidChange:", name:NSControlTextDidChangeNotification, object:graphVizPath)
+
     # default preferences
 		@userDefaultsPrefs = NSUserDefaults.standardUserDefaults()
     
@@ -50,6 +55,9 @@ class Preferences
     @suuInterval.addItemsWithTitles(@suuIntervalsDef.keys)
     @suuInterval.selectItemWithTitle(@suuIntervalsDef.invert[Integer(SUUpdater.sharedUpdater.updateCheckInterval)])
     @suuAutomaticallyDownloadsUpdates.state = SUUpdater.sharedUpdater.automaticallyDownloadsUpdates
+    
+    # Verify graphviz path
+    graphVizPathChange()
   end
   
   def closePreferencesWindow(sender)
@@ -71,6 +79,32 @@ class Preferences
 		NSApp.beginSheet(@preferencesWindow, modalForWindow:@mainWindow, modalDelegate:nil, didEndSelector:nil, contextInfo:nil)
 	end
   
+  def chooseGraphVizPath(sender)
+    panel = NSOpenPanel.openPanel()
+    panel.title = "Select GraphViz Path"
+    panel.canChooseFiles = false
+    panel.canChooseDirectories = true
+    ret = panel.runModal()
+    if ret == NSFileHandlingPanelOKButton
+      graphVizPath.stringValue = panel.URL.path
+      graphVizPathChange()
+    end
+  end
+
+  def graphVizPathChange
+    if find_executable("dot", [graphVizPath.stringValue]).nil?
+      graphVizPath.textColor = NSColor.redColor()
+    else
+      graphVizPath.textColor = NSColor.blackColor()
+    end
+  end
+  
+  def graphVizPathDidChange(aNotifier)
+    if aNotifier.object == graphVizPath
+      graphVizPathChange()
+    end
+  end
+  
   def autogenerate?
     @userDefaultsPrefs.valueForKey("Autogenerate")
   end
@@ -81,5 +115,5 @@ class Preferences
   
   def [](x) 
     @userDefaultsPrefs.valueForKey(x)
-  end  
+  end 
 end
