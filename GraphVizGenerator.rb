@@ -19,6 +19,7 @@ class GraphVizGenerator
     @pdfView = pdfView
     @preferences = preferences
     @interpretor = "dot"
+    @generateThread = nil
   end
   
   def save( format = "pdf", file = nil )
@@ -53,6 +54,11 @@ class GraphVizGenerator
   end
   
   def regenerate(sender)
-    save()
+    if @generateThread.nil? == false and @generateThread.alive?
+      # DO Something ???
+    end
+    @generateThread = Thread.new do 
+      save()
+    end
   end
 end

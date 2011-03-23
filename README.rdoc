@@ -23,6 +23,7 @@ Now you know that it works... badly, so make your corrections, commit them and s
 == CHANGELOG
 
 === 0.9.0
+* Xcode 4 support
 * Remove BWToolkit dependency
 * Update Fragaria
 * Tiny improvements in preferences

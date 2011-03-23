@@ -473,9 +473,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/build/Debug\"",
-					"\"$(SRCROOT)/../../Library/Developer/BWToolkit\"",
-					"\"$(SRCROOT)/../../../Library/Developer/BWToolkit\"",
-					"\"$(SRCROOT)/../../../../../Library/Developer/BWToolkit\"",
 					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -498,9 +495,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/build/Debug\"",
-					"\"$(SRCROOT)/../../Library/Developer/BWToolkit\"",
-					"\"$(SRCROOT)/../../../Library/Developer/BWToolkit\"",
-					"\"$(SRCROOT)/../../../../../Library/Developer/BWToolkit\"",
 					"\"$(SRCROOT)\"",
 				);
 				GCC_MODEL_TUNING = G5;
@@ -516,6 +510,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
