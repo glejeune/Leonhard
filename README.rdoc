@@ -14,7 +14,6 @@ First, install :
 * {Apple Developer Tools}[http://developer.apple.com/technologies/tools/]
 * MacRuby[http://www.macruby.org/]
 * GraphViz[http://www.graphviz.org/]
-* BWToolkit[http://brandonwalkin.com/bwtoolkit/]
 
 Then, fork this repo, open <tt>Leonhard.xcodeproj</tt> with Xcode and 
 clic on "Build and Run"
@@ -61,6 +60,5 @@ Now you know that it works... badly, so make your corrections, commit them and s
 * Use Sparkle[http://sparkle.andymatuschak.org]
 
 === 0.1.0
-
 * Proof of concept
 
