@@ -11,7 +11,7 @@
 			<string key="com.apple.pdfkit.ibplugin">1.1.0</string>
 		</dictionary>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="371"/>
+			<integer value="372"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1160,7 +1160,7 @@
 																		<object class="NSTextView" id="370633629">
 																			<reference key="NSNextResponder" ref="646135218"/>
 																			<int key="NSvFlags">2322</int>
-																			<string key="NSFrame">{{0, 3}, {429, 14}}</string>
+																			<string key="NSFrameSize">{429, 14}</string>
 																			<reference key="NSSuperview" ref="646135218"/>
 																			<object class="NSTextContainer" key="NSTextContainer" id="578120143">
 																				<object class="NSLayoutManager" key="NSLayoutManager">
@@ -1230,6 +1230,7 @@
 																	</array>
 																	<string key="NSFrameSize">{429, 160}</string>
 																	<reference key="NSSuperview" ref="1057737908"/>
+																	<reference key="NSNextKeyView" ref="370633629"/>
 																	<reference key="NSDocView" ref="370633629"/>
 																	<reference key="NSBGColor" ref="290650808"/>
 																	<object class="NSCursor" key="NSCursor">
@@ -1262,6 +1263,7 @@
 															</array>
 															<string key="NSFrameSize">{444, 160}</string>
 															<reference key="NSSuperview" ref="368330529"/>
+															<reference key="NSNextKeyView" ref="646135218"/>
 															<int key="NSsFlags">16</int>
 															<reference key="NSVScroller" ref="336437492"/>
 															<reference key="NSHScroller" ref="844526635"/>
@@ -1414,7 +1416,6 @@
 									</array>
 									<reference key="NSMenuFont" ref="1030526207"/>
 								</object>
-								<int key="NSSelectedIndex">-1</int>
 								<bool key="NSPullDown">YES</bool>
 								<int key="NSPreferredEdge">1</int>
 								<bool key="NSUsesItemFromMenu">YES</bool>
@@ -2674,6 +2675,14 @@ IEJlbmVkaWN0ClJ1YnksIE1hY1J1YnksIEdyYXBoVml6LCBZb3UuA</string>
 						<reference key="destination" ref="1060246625"/>
 					</object>
 					<int key="connectionID">698</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">collapseButton</string>
+						<reference key="source" ref="266957278"/>
+						<reference key="destination" ref="481996737"/>
+					</object>
+					<int key="connectionID">699</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -4091,9 +4100,9 @@ IEJlbmVkaWN0ClJ1YnksIE1hY1J1YnksIEdyYXBoVml6LCBZb3UuA</string>
 				<integer value="1" key="351.ImportedFromIB2"/>
 				<string key="354.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="354.ImportedFromIB2"/>
-				<string key="371.IBEditorWindowLastContentRect">{{27, 69}, {836, 601}}</string>
+				<string key="371.IBEditorWindowLastContentRect">{{384, 61}, {836, 601}}</string>
 				<string key="371.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="371.IBWindowTemplateEditedContentRect">{{27, 69}, {836, 601}}</string>
+				<string key="371.IBWindowTemplateEditedContentRect">{{384, 61}, {836, 601}}</string>
 				<integer value="1" key="371.NSWindowTemplate.visibleAtLaunch"/>
 				<string key="371.editorWindowContentRectSynchronizationRect">{{33, 99}, {480, 360}}</string>
 				<string key="372.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4303,7 +4312,7 @@ IEJlbmVkaWN0ClJ1YnksIE1hY1J1YnksIEdyYXBoVml6LCBZb3UuA</string>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">698</int>
+			<int key="maxID">699</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4442,6 +4451,7 @@ IEJlbmVkaWN0ClJ1YnksIE1hY1J1YnksIEdyYXBoVml6LCBZb3UuA</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="codeView">id</string>
+						<string key="collapseButton">id</string>
 						<string key="editorAndDebugSplitView">id</string>
 						<string key="errorsView">id</string>
 						<string key="fragaria">id</string>
@@ -4454,6 +4464,10 @@ IEJlbmVkaWN0ClJ1YnksIE1hY1J1YnksIEdyYXBoVml6LCBZb3UuA</string>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="codeView">
 							<string key="name">codeView</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="collapseButton">
+							<string key="name">collapseButton</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="editorAndDebugSplitView">

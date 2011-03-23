@@ -1,6 +1,6 @@
 = Leonhard
 
-Copyright (C) 2010 Gregoire Lejeune
+Copyright (C) 2010, 2011 Gregoire Lejeune
 
 A GraphViz[http://www.graphviz.org/] viewer/editor using MacRuby[http://www.macruby.org/]
 

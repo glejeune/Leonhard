@@ -2,7 +2,7 @@
 # Leonhard
 #
 # Created by greg on 28/07/10.
-# Copyright 2010 Gregoire Lejeune. All rights reserved.
+# Copyright 2010, 2011 Gregoire Lejeune. All rights reserved.
 
 #require 'CodeViewDelegator'
 #require 'GraphVizGenerator'
@@ -20,6 +20,7 @@ class AppController
   attr_accessor :interpretorMenu
   attr_accessor :fragaria
   attr_accessor :editorAndDebugSplitView
+  attr_accessor :collapseButton
 
   def initialize
     @fileName = nil
@@ -27,6 +28,15 @@ class AppController
     @lastEditorViewHeight = 0
     @lastDebugViewHeight = 0
     @debugIsCollapsed = false
+    
+    @collapseImage = NSImage.alloc.initWithContentsOfURL(
+      NSURL.fileURLWithPath(
+        NSBundle.mainBundle.pathForResource( "SlideDetailCollapse_h", ofType:"png" )
+      )
+    )
+
+
+[toggleButton setImage: image] ;
   end
 
   def awakeFromNib

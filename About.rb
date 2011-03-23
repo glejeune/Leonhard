@@ -2,7 +2,7 @@
 # Leonhard
 #
 # Created by greg on 24/02/11.
-# Copyright 2011 __MyCompanyName__. All rights reserved.
+# Copyright 2011, 2011 Gregoire Lejeune. All rights reserved.
 
 class About
   attr_accessor :leonhard_version

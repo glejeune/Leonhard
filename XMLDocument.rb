@@ -2,7 +2,7 @@
 # Leonhard
 #
 # Created by greg on 03/11/10.
-# Copyright 2010 Grégoire Lejeune. All rights reserved.
+# Copyright 2010, 2011 Grégoire Lejeune. All rights reserved.
 
 require 'rexml/document'
 
