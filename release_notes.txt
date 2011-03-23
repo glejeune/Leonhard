@@ -1,6 +1,6 @@
 h1. <span>2011-xx-xx</span> Release 0.9.0
 
-* Update BWToolkit
+* Remove BWToolkit dependency
 * Update Fragaria
 * Reduce APP size
 * Tiny improvements in preferences

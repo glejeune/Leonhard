@@ -44,6 +44,7 @@
 
 /* Begin PBXBuildFile section */
 		2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA9DA510CDF852007972A1 /* MainMenu.xib */; };
+		371275D5133A78DA009DF3A3 /* release_notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 371275D4133A78DA009DF3A3 /* release_notes.txt */; };
 		371D663D12008B87002A5AD5 /* Preferences.rb in Resources */ = {isa = PBXBuildFile; fileRef = 371D663C12008B87002A5AD5 /* Preferences.rb */; };
 		373C1F3912030DE7007A93D3 /* GVPDFView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 373C1F3812030DE7007A93D3 /* GVPDFView.rb */; };
 		373C1F7712031576007A93D3 /* LeonhardHelp in Resources */ = {isa = PBXBuildFile; fileRef = 373C1F7412031576007A93D3 /* LeonhardHelp */; };
@@ -53,8 +54,6 @@
 		37652ACF127F19B000356007 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 37652ACE127F19B000356007 /* dsa_pub.pem */; };
 		3786279A127EE5C90010307B /* MGSFragaria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37862799127EE5C90010307B /* MGSFragaria.framework */; };
 		3786279F127EE6100010307B /* MGSFragaria.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37862799127EE5C90010307B /* MGSFragaria.framework */; };
-		3787FAF5127EE7990054304C /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3787FAF4127EE7990054304C /* BWToolkitFramework.framework */; };
-		3787FAF8127EE79E0054304C /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3787FAF4127EE7990054304C /* BWToolkitFramework.framework */; };
 		3787FB2E127EE86D0054304C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3787FB2D127EE86D0054304C /* Sparkle.framework */; };
 		3787FB31127EE8700054304C /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3787FB2D127EE86D0054304C /* Sparkle.framework */; };
 		378AF81A120031EC002499BB /* AppController.rb in Resources */ = {isa = PBXBuildFile; fileRef = 378AF819120031EC002499BB /* AppController.rb */; };
@@ -80,7 +79,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				3787FB31127EE8700054304C /* Sparkle.framework in CopyFiles */,
-				3787FAF8127EE79E0054304C /* BWToolkitFramework.framework in CopyFiles */,
 				3786279F127EE6100010307B /* MGSFragaria.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +95,7 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2BFA9DA610CDF852007972A1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		371275D4133A78DA009DF3A3 /* release_notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.txt; sourceTree = "<group>"; };
 		371D663C12008B87002A5AD5 /* Preferences.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Preferences.rb; sourceTree = "<group>"; };
 		373C1F3812030DE7007A93D3 /* GVPDFView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = GVPDFView.rb; sourceTree = "<group>"; };
 		373C1F7412031576007A93D3 /* LeonhardHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LeonhardHelp; sourceTree = "<group>"; };
@@ -105,7 +104,6 @@
 		3742A1671319DE7E00468155 /* SlideDetailReveal_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SlideDetailReveal_h.png; sourceTree = "<group>"; };
 		37652ACE127F19B000356007 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		37862799127EE5C90010307B /* MGSFragaria.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MGSFragaria.framework; sourceTree = "<group>"; };
-		3787FAF4127EE7990054304C /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BWToolkitFramework.framework; sourceTree = "<group>"; };
 		3787FB2D127EE86D0054304C /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		378AF819120031EC002499BB /* AppController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AppController.rb; sourceTree = "<group>"; };
 		378AF870120033A5002499BB /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
@@ -131,7 +129,6 @@
 				4DE3BE140D8651D900ECA448 /* MacRuby.framework in Frameworks */,
 				378AF871120033A5002499BB /* Quartz.framework in Frameworks */,
 				3786279A127EE5C90010307B /* MGSFragaria.framework in Frameworks */,
-				3787FAF5127EE7990054304C /* BWToolkitFramework.framework in Frameworks */,
 				3787FB2E127EE86D0054304C /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,7 +159,6 @@
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				378AF870120033A5002499BB /* Quartz.framework */,
 				37862799127EE5C90010307B /* MGSFragaria.framework */,
-				3787FAF4127EE7990054304C /* BWToolkitFramework.framework */,
 				3787FB2D127EE86D0054304C /* Sparkle.framework */,
 			);
 			name = "Linked Frameworks";
@@ -198,6 +194,7 @@
 		29B97314FDCFA39411CA2CEA /* Leonhard */ = {
 			isa = PBXGroup;
 			children = (
+				371275D4133A78DA009DF3A3 /* release_notes.txt */,
 				172754AE1075979200D0347B /* Tests */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -314,6 +311,7 @@
 				37E649F21316EA7D00BCA54A /* About.rb in Resources */,
 				3742A1681319DE7E00468155 /* SlideDetailCollapse_h.png in Resources */,
 				3742A1691319DE7E00468155 /* SlideDetailReveal_h.png in Resources */,
+				371275D5133A78DA009DF3A3 /* release_notes.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

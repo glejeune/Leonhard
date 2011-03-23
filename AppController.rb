@@ -19,10 +19,14 @@ class AppController
   attr_accessor :errorsView
   attr_accessor :interpretorMenu
   attr_accessor :fragaria
+  attr_accessor :editorAndDebugSplitView
 
   def initialize
     @fileName = nil
     @lastSavedScript = nil
+    @lastEditorViewHeight = 0
+    @lastDebugViewHeight = 0
+    @debugIsCollapsed = false
   end
 
   def awakeFromNib
@@ -74,6 +78,39 @@ class AppController
     end
 
     loadDOTFile(@fileToOpen) if @fileToOpen
+  end
+  
+  def collapseTheDebugView(sender)
+    editor = editorAndDebugSplitView.subviews.objectAtIndex(0)
+    debug = editorAndDebugSplitView.subviews.objectAtIndex(1)
+    
+    if !@debugIsCollapsed
+      editorFrame=editor.frame()
+      debugFrame=debug.frame()
+
+      @lastEditorViewHeight = NSHeight(editorFrame)
+      
+      editorFrame.size.height += @lastDebugViewHeight=NSHeight(debugFrame);
+      editor.setFrame(editorFrame)
+      
+      debugFrame.size.height=0
+      debug.setFrame(debugFrame)
+      
+      editorAndDebugSplitView.adjustSubviews()
+      @debugIsCollapsed = true
+    else
+      editorFrame=editor.frame()
+      debugFrame=debug.frame()
+
+      editorFrame.size.height = @lastEditorViewHeight
+      editor.setFrame(editorFrame)
+      
+      debugFrame.size.height=@lastDebugViewHeight
+      debug.setFrame(debugFrame)      
+
+      editorAndDebugSplitView.adjustSubviews()
+      @debugIsCollapsed = false
+    end    
   end
 
   def application(sender, openFile:path)
