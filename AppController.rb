@@ -34,9 +34,11 @@ class AppController
         NSBundle.mainBundle.pathForResource( "SlideDetailCollapse_h", ofType:"png" )
       )
     )
-
-
-[toggleButton setImage: image] ;
+    @revealImage = NSImage.alloc.initWithContentsOfURL(
+      NSURL.fileURLWithPath(
+        NSBundle.mainBundle.pathForResource( "SlideDetailReveal_h", ofType:"png" )
+      )
+    )
   end
 
   def awakeFromNib
@@ -84,7 +86,11 @@ class AppController
     # Set default interpretor
     @graphVizGenerator.interpretor = "dot"
     @interpretorMenu.itemArray.each do |menuItem|
-      menuItem.state = NSOffState unless menuItem.title == @graphVizGenerator.interpretor
+      unless menuItem.title == @graphVizGenerator.interpretor
+        menuItem.state = NSOffState 
+      else 
+        menuItem.state = NSOnState
+      end
     end
 
     loadDOTFile(@fileToOpen) if @fileToOpen
@@ -108,6 +114,8 @@ class AppController
       
       editorAndDebugSplitView.adjustSubviews()
       @debugIsCollapsed = true
+
+      collapseButton.setImage(@revealImage)
     else
       editorFrame=editor.frame()
       debugFrame=debug.frame()
@@ -120,6 +128,8 @@ class AppController
 
       editorAndDebugSplitView.adjustSubviews()
       @debugIsCollapsed = false
+
+      collapseButton.setImage(@collapseImage)
     end    
   end
 
