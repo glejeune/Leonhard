@@ -58,7 +58,11 @@ class GraphVizGenerator
       # DO Something ???
     end
     @generateThread = Thread.new do 
-      save()
+      begin
+        save()
+      rescue => e
+        NSLog(e.message)
+      end
     end
   end
 end

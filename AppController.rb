@@ -21,6 +21,7 @@ class AppController
   attr_accessor :fragaria
   attr_accessor :editorAndDebugSplitView
   attr_accessor :collapseButton
+  attr_accessor :zoomSlider
 
   def initialize
     @fileName = nil
@@ -133,6 +134,15 @@ class AppController
     end    
   end
 
+  def zoom(sender)
+    if zoomSlider.doubleValue > 0.0
+      pdfView.zoomIn(self)
+    elsif zoomSlider.doubleValue < 0.0
+      pdfView.zoomOut(self)
+    end
+    zoomSlider.doubleValue = 0.0
+  end
+  
   def application(sender, openFile:path)
     @fileToOpen = path
     return true
@@ -240,8 +250,6 @@ class AppController
     
     panel = NSOpenPanel.openPanel()
     panel.setCanChooseFiles(true)
-#    panel.setAllowedFileTypes(["graphml", "gml", "xml"])
-#    ret = panel.runModal()
     ret = panel.runModalForTypes(["graphml", "gml", "xml"])
     if ret == NSFileHandlingPanelOKButton
       begin
@@ -265,8 +273,6 @@ class AppController
     
     panel = NSOpenPanel.openPanel()
     panel.setCanChooseFiles(true)
-#    panel.setAllowedFileTypes(["xml"])
-#    ret = panel.runModal()
     ret = panel.runModalForTypes(["xml"])
     if ret == NSFileHandlingPanelOKButton
       @fileName = nil
@@ -286,8 +292,6 @@ class AppController
     
     panel = NSOpenPanel.openPanel()
     panel.setCanChooseFiles(true)
-#    panel.setAllowedFileTypes(["gml"])
-#    ret = panel.runModal()
     ret = panel.runModalForTypes(["gml"])
     if ret == NSFileHandlingPanelOKButton
       @fileName = nil
@@ -315,8 +319,6 @@ class AppController
     
     panel = NSOpenPanel.openPanel()
     panel.setCanChooseFiles(true)
-#    panel.setAllowedFileTypes(["gxl"])
-#    ret = panel.runModal()
     ret = panel.runModalForTypes(["gxl"])
     if ret == NSFileHandlingPanelOKButton
       @fileName = nil
