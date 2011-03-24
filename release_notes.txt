@@ -1,9 +1,10 @@
 h1. <span>2011-xx-xx</span> Release 0.9.0
 
+* Populate "Open Recent" menu
+* Tiny improvements in preferences
 * Remove BWToolkit dependency
 * Update Fragaria
 * Reduce APP size
-* Tiny improvements in preferences
 
 h1. <span>2011-02-26</span> Release 0.8.0
 

@@ -23,10 +23,11 @@ Now you know that it works... badly, so make your corrections, commit them and s
 == CHANGELOG
 
 === 0.9.0
+* Populate "Open Recent" menu
+* Tiny improvements in preferences
 * Xcode 4 support
 * Remove BWToolkit dependency
 * Update Fragaria
-* Tiny improvements in preferences
 
 === 0.8.0
 * Work with MacRuby 0.9

@@ -217,7 +217,15 @@ class AppController
     ret = panel.runModal()
     if ret == NSFileHandlingPanelOKButton
       loadDOTFile( panel.URL.path )
+      # Populate "Open Recent"
+      NSDocumentController.sharedDocumentController.noteNewRecentDocumentURL(panel.URL)
     end
+  end
+  
+  # Needed by "Open Recent" on Non Document-based application
+  def application(app, openFile:file)
+    return if saveIfNeeded() == false 
+    loadDOTFile(file)
   end
 
   def loadDOTFile( file )

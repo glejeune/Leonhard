@@ -1192,7 +1192,7 @@
 																			<string key="NSFrameSize">{429, 14}</string>
 																			<reference key="NSSuperview" ref="646135218"/>
 																			<reference key="NSWindow"/>
-																			<reference key="NSNextKeyView" ref="336437492"/>
+																			<reference key="NSNextKeyView" ref="844526635"/>
 																			<object class="NSTextContainer" key="NSTextContainer" id="578120143">
 																				<object class="NSLayoutManager" key="NSLayoutManager">
 																					<object class="NSTextStorage" key="NSTextStorage">
@@ -1300,7 +1300,7 @@
 															<string key="NSFrameSize">{444, 160}</string>
 															<reference key="NSSuperview" ref="368330529"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="844526635"/>
+															<reference key="NSNextKeyView" ref="646135218"/>
 															<int key="NSsFlags">16</int>
 															<reference key="NSVScroller" ref="336437492"/>
 															<reference key="NSHScroller" ref="844526635"/>
@@ -1340,7 +1340,6 @@
 											<string key="NSFrameSize">{391, 569}</string>
 											<reference key="NSSuperview" ref="369853533"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView"/>
 											<int key="DisplayMode">1</int>
 											<bool key="PageBreaks">YES</bool>
 											<float key="ScaleFactor">1</float>
@@ -1384,21 +1383,21 @@
 								<string key="NSKeyEquivalent"/>
 								<int key="NSPeriodicDelay">400</int>
 								<int key="NSPeriodicInterval">75</int>
-								<object class="NSMenuItem" key="NSMenuItem" id="834775715">
-									<reference key="NSMenu" ref="42607207"/>
-									<string key="NSTitle">dot</string>
-									<string key="NSKeyEquiv"/>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="35465992"/>
-									<reference key="NSMixedImage" ref="807125248"/>
-									<string key="NSAction">_popUpItemAction:</string>
-									<reference key="NSTarget" ref="312825303"/>
-								</object>
+								<nil key="NSMenuItem"/>
 								<bool key="NSMenuItemRespectAlignment">YES</bool>
 								<object class="NSMenu" key="NSMenu" id="42607207">
 									<string key="NSTitle">OtherViews</string>
 									<array class="NSMutableArray" key="NSMenuItems">
-										<reference ref="834775715"/>
+										<object class="NSMenuItem" id="834775715">
+											<reference key="NSMenu" ref="42607207"/>
+											<string key="NSTitle">dot</string>
+											<string key="NSKeyEquiv"/>
+											<int key="NSMnemonicLoc">2147483647</int>
+											<reference key="NSOnImage" ref="35465992"/>
+											<reference key="NSMixedImage" ref="807125248"/>
+											<string key="NSAction">_popUpItemAction:</string>
+											<reference key="NSTarget" ref="312825303"/>
+										</object>
 										<object class="NSMenuItem" id="1060246625">
 											<reference key="NSMenu" ref="42607207"/>
 											<string key="NSTitle">neato</string>
@@ -1452,6 +1451,7 @@
 									</array>
 									<reference key="NSMenuFont" ref="1030526207"/>
 								</object>
+								<int key="NSSelectedIndex">-1</int>
 								<int key="NSPreferredEdge">1</int>
 								<bool key="NSUsesItemFromMenu">YES</bool>
 								<bool key="NSAltersState">YES</bool>
@@ -1490,7 +1490,6 @@
 							<string key="NSFrame">{{686, 5}, {132, 21}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSSliderCell" key="NSCell" id="905342122">
 								<int key="NSCellFlags">-2080244224</int>
