@@ -26,8 +26,9 @@ Now you know that it works... badly, so make your corrections, commit them and s
 * Populate "Open Recent" menu
 * Tiny improvements in preferences
 * Xcode 4 support
-* Remove BWToolkit dependency
+* Upgrade to MacRuby 0.10
 * Update Fragaria
+* Remove BWToolkit dependency
 
 === 0.8.0
 * Work with MacRuby 0.9
