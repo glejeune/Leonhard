@@ -1,18 +1,13 @@
 require "rubygems"
 require "rake"
+require "chocbomb"
 
-require "choctop"
-
-ChocTop::Configuration.new do |s|
-  # Remote upload target (set host if not same as Info.plist['SUFeedURL'])
-  s.host = 'algorithmique.net'
-  s.base_url = "http://#{s.host}/leonhard"
-  s.remote_dir = '/path/to/upload/root/of/app'
-
+ChocBomb::Configuration.new do |s|
   # Custom DMG
   s.background_file = "background.png"
-  s.app_icon_position = [140, 300]
-  s.applications_icon_position =  [370, 300]
-  # s.volume_icon = "dmg.icns"
-  # s.applications_icon = "appicon.icns" # or "appicon.png"
+  s.app_icon_position = [140, 330]
+  s.applications_icon_position = [370, 330]
+  #s.icon_size = 82
+  #s.icon_text_size = 10
+  s.link 'http://graphviz.org', :name => "Graphviz", :position => [370, 70]
 end
