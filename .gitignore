@@ -4,3 +4,4 @@ build
 *.pbxuser
 dsa_priv.pem
 xcuserdata
+.rake_tasks
