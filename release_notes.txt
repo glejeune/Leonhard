@@ -1,4 +1,4 @@
-h1. <span>2011-xx-xx</span> Release 0.9.0
+h1. <span>2011-03-26</span> Release 0.9.0
 
 * Populate "Open Recent" menu
 * Tiny improvements in preferences
