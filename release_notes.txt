@@ -1,3 +1,6 @@
+h1. <span>2011-XX-XX</span> Release 1.0.0
+
+
 h1. <span>2011-03-26</span> Release 0.9.0
 
 * Populate "Open Recent" menu

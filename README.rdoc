@@ -22,6 +22,12 @@ Now you know that it works... badly, so make your corrections, commit them and s
 
 == CHANGELOG
 
+=== 1.0.0
+* [TODO] Display matrixes (Adjancy, Incidence, Laplacian, ...)
+* [TODO] Graph Theory (Dijkstra, Critical path, ...)
+* [TODO] Printing - Print Graph, Source or both
+* [TODO] Write help
+
 === 0.9.0
 * Populate "Open Recent" menu
 * Tiny improvements in preferences
