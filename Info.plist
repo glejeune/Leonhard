@@ -46,7 +46,7 @@
 	<key>CFBundleHelpBookName</key>
 	<string>Leonhard Help</string>
 	<key>CFBundleIconFile</key>
-	<string>graph.icns</string>
+	<string>Leonhard.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>net.algorithmique.Leonhard</string>
 	<key>CFBundleInfoDictionaryVersion</key>
