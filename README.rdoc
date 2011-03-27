@@ -26,7 +26,7 @@ Now you know that it works... badly, so make your corrections, commit them and s
 * [TODO] Display matrixes (Adjancy, Incidence, Laplacian, ...)
 * [TODO] Graph Theory (Dijkstra, Critical path, ...)
 * [TODO] [ISSUE-4] Printing - Print Graph, Source or both
-* [TODO] [ISSUE-2] Save / Don't Save / Cancel panel bugs
+* [ISSUE-2] Save / Don't Save / Cancel panel bugs
 * [ISSUE-3] Can't open existing graph
 * [TODO] [ISSUE-5] Multiple document windows
 * [TODO] [ISSUE-6] Icon impossible to see on black background

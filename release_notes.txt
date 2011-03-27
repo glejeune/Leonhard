@@ -9,7 +9,7 @@ h3. Changes :
 h3. Issues :
 
 * [TODO] [ISSUE-4] Printing - Print Graph, Source or both
-* [TODO] [ISSUE-2] Save / Don't Save / Cancel panel bugs
+* [ISSUE-2] Save / Don't Save / Cancel panel bugs
 * [ISSUE-3] Can't open existing graph
 * [TODO] [ISSUE-5] Multiple document windows
 * [TODO] [ISSUE-6] Icon impossible to see on black background

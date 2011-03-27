@@ -173,15 +173,17 @@ class AppController
     ret = panel.runModal()
     if ret == NSFileHandlingPanelOKButton
       @fileName = panel.URL.path
-      saveDOTFile()
+      return saveDOTFile()
+    else
+      return false
     end
   end
   
   def save(sender)
     if @fileName.nil?
-      saveAs(sender)
+      return saveAs(sender)
     else
-      saveDOTFile()
+      return saveDOTFile()
     end
   end
   
@@ -191,6 +193,7 @@ class AppController
     
     # mainWindow title
     @mainWindow.title = "#{File.basename(@fileName)} - Leonhard"
+    return true
   end
 
   def revertToSave(sender)
@@ -356,19 +359,19 @@ class AppController
     data = self.codeView.textStorage.string.clone
     data = nil if data.strip.empty?
     unless @lastSavedScript == data
-      documentName = "???"
       alert = NSAlert.alloc.init
-      alert.addButtonWithTitle("Save")
+      alert.addButtonWithTitle("Save...")
       alert.addButtonWithTitle("Cancel")
-      alert.addButtonWithTitle("Don't save")
-      alert.setMessageText("Do you want to save the changes you made in the document #{documentName}?")
+      dontButton = alert.addButtonWithTitle("Don't Save") 
+      dontButton.setKeyEquivalent("d")
+      dontButton.setKeyEquivalentModifierMask(NSCommandKeyMask)
+      alert.setMessageText("Do you want to save the changes you made in the document?")
       alert.setInformativeText("Your changes will be lost if you don't save them.")
       alert.setAlertStyle(NSWarningAlertStyle)
       ret = alert.runModal()
       case ret
         when NSAlertFirstButtonReturn
-          save(self)
-          rcod = true
+          rcod = save(self)
         when NSAlertThirdButtonReturn
           rcod = true
         else
