@@ -41,6 +41,10 @@
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>LeonhardHelp</string>
+	<key>CFBundleHelpBookName</key>
+	<string>Leonhard Help</string>
 	<key>CFBundleIconFile</key>
 	<string>graph.icns</string>
 	<key>CFBundleIdentifier</key>
@@ -53,19 +57,23 @@
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array/>
 	<key>CFBundleVersion</key>
-	<string>0.9.0</string>
+	<string>0.9.1</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>CFBundleHelpBookName</key>
-	<string>Leonhard Help</string>
-	<key>CFBundleHelpBookFolder</key>
-	<string>LeonhardHelp</string>
+	<key>NSServices</key>
+	<array/>
 	<key>SUFeedURL</key>
 	<string>http://algorithmique.net/leonhard/appcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
+	<key>UTExportedTypeDeclarations</key>
+	<array/>
+	<key>UTImportedTypeDeclarations</key>
+	<array/>
 </dict>
 </plist>

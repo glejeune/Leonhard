@@ -29,6 +29,7 @@ class AppController
     @lastEditorViewHeight = 0
     @lastDebugViewHeight = 0
     @debugIsCollapsed = false
+    @fileToOpen = nil
     
     @collapseImage = NSImage.alloc.initWithContentsOfURL(
       NSURL.fileURLWithPath(
@@ -142,12 +143,7 @@ class AppController
     end
     zoomSlider.doubleValue = 0.0
   end
-  
-  def application(sender, openFile:path)
-    @fileToOpen = path
-    return true
-  end
-  
+    
   def regenerate(sender)
     @graphVizGenerator.regenerate(sender)
   end
@@ -224,8 +220,13 @@ class AppController
   
   # Needed by "Open Recent" on Non Document-based application
   def application(app, openFile:file)
-    return if saveIfNeeded() == false 
-    loadDOTFile(file)
+    if self.codeView.nil?
+      @fileToOpen = file
+      return true
+    else
+      return if saveIfNeeded() == false 
+      loadDOTFile(file)
+    end
   end
 
   def loadDOTFile( file )
@@ -351,6 +352,7 @@ class AppController
   
   def saveIfNeeded
     rcod = true
+    
     data = self.codeView.textStorage.string.clone
     data = nil if data.strip.empty?
     unless @lastSavedScript == data
