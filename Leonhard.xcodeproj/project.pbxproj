@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 44;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -46,6 +46,7 @@
 		2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA9DA510CDF852007972A1 /* MainMenu.xib */; };
 		371275D5133A78DA009DF3A3 /* release_notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 371275D4133A78DA009DF3A3 /* release_notes.txt */; };
 		371D663D12008B87002A5AD5 /* Preferences.rb in Resources */ = {isa = PBXBuildFile; fileRef = 371D663C12008B87002A5AD5 /* Preferences.rb */; };
+		37246A5E133FD0FE00EB836F /* printer.png in Resources */ = {isa = PBXBuildFile; fileRef = 37246A5D133FD0FE00EB836F /* printer.png */; };
 		373C1F3912030DE7007A93D3 /* GVPDFView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 373C1F3812030DE7007A93D3 /* GVPDFView.rb */; };
 		373C1F7712031576007A93D3 /* LeonhardHelp in Resources */ = {isa = PBXBuildFile; fileRef = 373C1F7412031576007A93D3 /* LeonhardHelp */; };
 		373D3AD41200657F0091A32A /* GraphVizGenerator.rb in Resources */ = {isa = PBXBuildFile; fileRef = 373D3AD31200657F0091A32A /* GraphVizGenerator.rb */; };
@@ -98,6 +99,7 @@
 		2BFA9DA610CDF852007972A1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		371275D4133A78DA009DF3A3 /* release_notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.txt; sourceTree = "<group>"; };
 		371D663C12008B87002A5AD5 /* Preferences.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Preferences.rb; sourceTree = "<group>"; };
+		37246A5D133FD0FE00EB836F /* printer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = printer.png; sourceTree = "<group>"; };
 		373C1F3812030DE7007A93D3 /* GVPDFView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = GVPDFView.rb; sourceTree = "<group>"; };
 		373C1F7412031576007A93D3 /* LeonhardHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LeonhardHelp; sourceTree = "<group>"; };
 		373D3AD31200657F0091A32A /* GraphVizGenerator.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = GraphVizGenerator.rb; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				37246A5D133FD0FE00EB836F /* printer.png */,
 				37F6ECEB133FAD110057BA56 /* Leonhard.icns */,
 				3742A1661319DE7E00468155 /* SlideDetailCollapse_h.png */,
 				3742A1671319DE7E00468155 /* SlideDetailReveal_h.png */,
@@ -271,10 +274,11 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Gregoire Lejeune";
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Leonhard" */;
-			compatibilityVersion = "Xcode 3.0";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -282,6 +286,7 @@
 				Japanese,
 				French,
 				German,
+				fr,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Leonhard */;
 			projectDirPath = "";
@@ -319,6 +324,7 @@
 				3742A1691319DE7E00468155 /* SlideDetailReveal_h.png in Resources */,
 				371275D5133A78DA009DF3A3 /* release_notes.txt in Resources */,
 				37F6ECEC133FAD110057BA56 /* Leonhard.icns in Resources */,
+				37246A5E133FD0FE00EB836F /* printer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +431,6 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Unit Tests";
 				ZERO_LINK = NO;
 			};
@@ -446,7 +451,6 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = Compile;
 				ZERO_LINK = NO;
 			};
@@ -467,7 +471,6 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = Embed;
 				ZERO_LINK = NO;
 			};
@@ -483,7 +486,6 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -521,8 +523,7 @@
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -533,8 +534,7 @@
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};

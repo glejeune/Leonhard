@@ -1,18 +1,9 @@
-h1. <span>2011-XX-XX</span> Release 1.0.0
+h1. <span>2011-12-05</span> Release 0.9.1
 
-h3. Changes :
-
-* [TODO] Display matrixes (Adjancy, Incidence, Laplacian, ...)
-* [TODO] Graph Theory (Dijkstra, Critical path, ...)
-* [TODO] Write help
-
-h3. Issues :
-
-* [TODO] [ISSUE-4] Printing - Print Graph, Source or both
+* [ISSUE-4] Printing - Print Graph, Source or both
 * [ISSUE-2] Save / Don't Save / Cancel panel bugs
 * [ISSUE-3] Can't open existing graph
-* [TODO] [ISSUE-5] Multiple document windows
-* [TODO] [ISSUE-6] Icon impossible to see on black background
+* [ISSUE-6] Icon impossible to see on black background
 
 h1. <span>2011-03-26</span> Release 0.9.0
 

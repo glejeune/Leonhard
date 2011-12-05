@@ -15,6 +15,7 @@ class Preferences
   attr_accessor :suuAutomaticallyChecksForUpdates
   attr_accessor :suuInterval
   attr_accessor :suuAutomaticallyDownloadsUpdates
+  attr_accessor :editorFont
 
   def initialize
     @suuIntervalsDef = {
@@ -39,6 +40,10 @@ class Preferences
     @userDefaultsPrefs.setObject(2, forKey:"TabWidth")
     @userDefaultsPrefs.setObject(2, forKey:"IndentWidth")
     @userDefaultsPrefs.setObject(NSArchiver.archivedDataWithRootObject(NSFont.fontWithName("Courier", size:13)), forKey:"TextFont")
+    
+    _currentFont = NSUnarchiver.unarchiveObjectWithData(@userDefaultsPrefs.valueForKey("TextFont"))
+    @editorFont.font = _currentFont
+    @editorFont.stringValue = "#{_currentFont.fontName} - #{_currentFont.pointSize}" 
     
     # Leonhard
     @userDefaultsPrefs.setObject("", forKey:"GraphVizPath") if @userDefaultsPrefs.valueForKey("GraphVizPath").nil?
@@ -113,7 +118,39 @@ class Preferences
     @userDefaultsPrefs.valueForKey("GraphVizPath")
   end
   
+  def changeEditorFont(sender)
+    NSLog("FONT :")
+    _currentFont = NSUnarchiver.unarchiveObjectWithData(@userDefaultsPrefs.valueForKey("TextFont"))
+    
+    if _currentFont.nil?
+      _currentFont = NSFont.systemFontOfSize(NSFont.systemFontSize)
+    end
+    NSFontManager.sharedFontManager.setSelectedFont(_currentFont, isMultiple:false)
+    NSFontManager.sharedFontManager.orderFrontFontPanel(self)
+
+    NSFontManager.sharedFontManager.setDelegate(self)
+    NSFontManager.sharedFontManager.setAction(:changeFont)
+    
+    @preferencesWindow.makeFirstResponder(@preferencesWindow)
+  end
+  
+  def changeFont(sender)
+    NSLog("in changeFont")
+    fontManager = NSFontManager.sharedFontManager
+    selectedFont = fontManager.selectedFont
+    unless selectedFont.nil?
+      panelFont = fontManager.convertFont(selectedFont)
+      
+      fontSize = NSNumber.numberWithFloat(panelFont.pointSize)
+      fontName = panelFont.fontName
+      
+      @editorFont.stringValue = "#{fontName} - #{fontSize}"
+      @editorFont.font = panelFont
+    end
+  end
+  
   def [](x) 
     @userDefaultsPrefs.valueForKey(x)
   end 
+
 end

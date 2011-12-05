@@ -390,4 +390,9 @@ class AppController
     alert.setAlertStyle(NSWarningAlertStyle)
     alert.runModal()    
   end
+
+  def printSource(sender)
+    # TODO : Better print !
+    @codeView.print(self)
+  end
 end

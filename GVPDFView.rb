@@ -6,7 +6,6 @@
 
 class GVPDFView < PDFView
   def printDocument(sender)
-    # Let PDFView handle the printing.
     printInfo = NSPrintInfo.sharedPrintInfo
     printInfo.topMargin = 0.0
     printInfo.bottomMargin = 0.0
@@ -16,7 +15,8 @@ class GVPDFView < PDFView
     printInfo.verticallyCentered = true
     printInfo.horizontalPagination = NSFitPagination
     printInfo.verticalPagination = NSFitPagination
-    super.printWithInfo( printInfo, autoRotate:true, pageScaling:1 )
+    myop = NSPrintOperation.printOperationWithView(self.documentView, printInfo:printInfo)
+    myop.runOperation
     return
   end
 end
