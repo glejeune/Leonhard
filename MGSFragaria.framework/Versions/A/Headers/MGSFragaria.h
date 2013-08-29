@@ -30,6 +30,9 @@ extern NSString * const ro_MGSFOGutterScrollView; // readonly
 
 // NSObject
 extern NSString * const MGSFODelegate;
+extern NSString * const MGSFOBreakpointDelegate;
+extern NSString * const MGSFOAutoCompleteDelegate;
+extern NSString * const MGSFOSyntaxColouringDelegate;
 extern NSString * const ro_MGSFOLineNumbers; // readonly
 extern NSString * const ro_MGSFOSyntaxColouring; // readonly
 
@@ -37,15 +40,27 @@ extern NSString * const ro_MGSFOSyntaxColouring; // readonly
 @class MGSExtraInterfaceController;
 
 #import "MGSFragariaPreferences.h"
+#import "MGSBreakpointDelegate.h"
+#import "SMLSyntaxError.h"
+#import "SMLSyntaxColouringDelegate.h"
+#import "SMLSyntaxDefinition.h"
+
+@protocol MGSFragariaTextViewDelegate <NSObject>
+@optional
+- (void)mgsTextDidPaste:(NSNotification *)note;
+@end
 
 @interface MGSFragaria : NSObject
 {
 	@private
-	id _docSpec;
 	MGSExtraInterfaceController *extraInterfaceController;
+    id docSpec;
+    NSSet* objectGetterKeys;
+    NSSet* objectSetterKeys;
 }
 
-@property (readonly) MGSExtraInterfaceController *extraInterfaceController;
+@property (nonatomic, readonly, assign) MGSExtraInterfaceController *extraInterfaceController;
+@property (nonatomic, retain) id docSpec;
 
 + (id)currentInstance;
 + (void)setCurrentInstance:(MGSFragaria *)anInstance;
@@ -54,10 +69,12 @@ extern NSString * const ro_MGSFOSyntaxColouring; // readonly
 + (id)createDocSpec;
 + (void)docSpec:(id)docSpec setString:(NSString *)string;
 + (void)docSpec:(id)docSpec setString:(NSString *)string options:(NSDictionary *)options;
++ (void)docSpec:(id)docSpec setAttributedString:(NSAttributedString *)string;
++ (void)docSpec:(id)docSpec setAttributedString:(NSAttributedString *)string options:(NSDictionary *)options;
+
 + (NSString *)stringForDocSpec:(id)docSpec;
 + (NSAttributedString *)attributedStringForDocSpec:(id)docSpec;
 + (NSAttributedString *)attributedStringWithTemporaryAttributesAppliedForDocSpec:(id)docSpec;
-+ (NSString *)stringForDocSpec:(id)docSpec;
 
 - (id)initWithObject:(id)object;
 - (void)setObject:(id)object forKey:(id)key;
@@ -65,10 +82,23 @@ extern NSString * const ro_MGSFOSyntaxColouring; // readonly
 - (void)embedInView:(NSView *)view;
 - (void)setString:(NSString *)aString;
 - (void)setString:(NSString *)aString options:(NSDictionary *)options;
+- (void)setAttributedString:(NSAttributedString *)aString;
+- (void)setAttributedString:(NSAttributedString *)aString options:(NSDictionary *)options;
 - (NSAttributedString *)attributedString;
 - (NSAttributedString *)attributedStringWithTemporaryAttributesApplied;
 - (NSString *)string;
-- (id)docSpec;
+
 - (NSTextView *)textView;
 - (MGSTextMenuController *)textMenuController;
+- (void)setSyntaxColoured:(BOOL)value;
+- (BOOL)isSyntaxColoured;
+- (void)setShowsLineNumbers:(BOOL)value;
+- (BOOL)showsLineNumbers;
+- (void)reloadString;
+
+- (void)setSyntaxErrors:(NSArray *)errors;
+- (NSArray *)syntaxErrors;
+
++ (NSImage *) imageNamed:(NSString *)name;
+
 @end
